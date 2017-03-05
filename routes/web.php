@@ -23,5 +23,8 @@ Route::group($admin, function () {
     Route::get('/', 'IndexController@index');
     Route::get('/photoList', 'PhotoController@index');
     Route::get('/issuePhoto', 'PhotoController@issuePhoto');
+
+    // 退出登录
+    Route::get('/logout', 'LoginController@logout');
 });
 

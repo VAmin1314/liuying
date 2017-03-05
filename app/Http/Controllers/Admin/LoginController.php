@@ -40,4 +40,10 @@ class LoginController extends Controller
             return ['status' => 'error', 'message' => '用户名不存在'];
         }
     }
+
+    public function logout ()
+    {
+        Session::forget('admin');
+        return redirect('/backend/login');
+    }
 }

@@ -115,10 +115,9 @@
         // 最后成功的状态
         setTimeout(function () {
             $.post('/backend/login', {name: name, password: password}, function (data) {
-                console.log(data);
                 if (data.status == 'success') {
                     $('.success h2').html('认证成功');
-                    $('.success p').html('页面跳转中');
+                    $('.success p').html('页面跳转中  <a href="/backend">点击跳转</a>');
                     setTimeout(function () {
                         location.href = '/backend';
                     }, 500);
