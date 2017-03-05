@@ -32,7 +32,7 @@ class LoginController extends Controller
         if ($admin) {
             if ($admin->password == $password) {
                 Session::put('admin', $admin);
-                return redirect('/backend');
+                return ['status' => 'success', 'message' => '认证成功'];
             } else {
                 return ['status' => 'error', 'message' => '密码不正确'];
             }

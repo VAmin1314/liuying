@@ -120,6 +120,9 @@
                 if (data.status == 'success') {
                     $('.success h2').html('认证成功');
                     $('.success p').html('页面跳转中');
+                    setTimeout(function () {
+                        location.href = '/backend';
+                    }, 500);
                 } else {
                     $('.success h2').html('认证失败');
                     $('.success p').html(data.message);
