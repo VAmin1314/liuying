@@ -20,7 +20,7 @@
                 <div class='icon'>
                     <img src='/admin/img/user_icon_copy.png'>
                 </div>
-                <input placeholder='用户名' type='text' name="name">
+                <input placeholder='用户名' type='text' name="name" autocomplete="off">
                 <div class='validation'>
                     <img src='/admin/img/tick.png'>
                 </div>
@@ -29,7 +29,7 @@
                 <div class='icon'>
                     <img src='/admin/img/lock_icon_copy.png'>
                 </div>
-                <input placeholder='密码' type='password' name="password">
+                <input placeholder='密码' type='password' name="password" autocomplete="off">
                 <div class='validation'>
                     <img src='/admin/img/tick.png'>
                 </div>
@@ -45,6 +45,7 @@
         <div class='success'>
             <h2></h2>
             <p></p>
+            <a href="./">返回重新登录</a>
         </div>
 
         <div class='disclaimer'>
