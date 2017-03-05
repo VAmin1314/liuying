@@ -45,7 +45,6 @@
         <div class='success'>
             <h2></h2>
             <p></p>
-            <a href="./">返回重新登录</a>
         </div>
 
         <div class='disclaimer'>
@@ -126,6 +125,7 @@
                 } else {
                     $('.success h2').html('认证失败');
                     $('.success p').html(data.message);
+                    $('.success').append('<a href="./">返回重新登录</a>');
                 }
                 $('.success').fadeIn();
             })
