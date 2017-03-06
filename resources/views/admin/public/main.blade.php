@@ -13,6 +13,8 @@
     <link href="/admin/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
     <link rel="stylesheet" href="/admin/css/owl.carousel.css" type="text/css">
 
+    <!-- layui -->
+    <link rel="stylesheet" href="/layui/css/layui.css" type="text/css">
     @yield('css')
 </head>
 <body>
@@ -44,6 +46,9 @@
 <script src="/admin/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
 <script src="/admin/js/owl.carousel.js" ></script>
 <script src="/admin/js/jquery.customSelect.min.js" ></script>
+
+<!-- layui -->
+<script src="/layui/layui.js" ></script>
 
 <!--common script for all pages-->
 <script src="/admin/js/common-scripts.js"></script>

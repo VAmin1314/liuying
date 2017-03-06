@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" type="text/css" href="/admin/css/default.css">
     <link rel="stylesheet" type="text/css" href="/admin/css/styles.css">
+    <link rel="stylesheet" href="/layui/css/layui.css" type="text/css">
 </head>
 <body>
     <div class='login'>
@@ -37,13 +38,13 @@
             <div class='login_fields__submit'>
                 <input type='submit' value='登录'>
                 <div class='forgot'>
-                    <a href='#'>忘记密码?</a>
+                    <a href='javascript:;' class="forgot-password">忘记密码?</a>
                 </div>
             </div>
         </div>
 
         <div class='success'>
-            <h2></h2>
+            <h2 style="font-size: 30px"></h2>
             <p></p>
         </div>
 
@@ -60,6 +61,7 @@
 <script src="/admin/js/jquery.js"></script>
 <script type="text/javascript" src='/admin/js/stopExecutionOnTimeout.js?t=1'></script>
 <script type="text/javascript" src="/admin/js/jquery-ui.min.js"></script>
+<script src="/layui/layui.js" ></script>
 <script>
     $('input[type="submit"]').click(function () {
         $.ajaxSetup({
@@ -71,9 +73,14 @@
         var name = $('input[name=name]').val();
         var password = $('input[name=password]').val();
         if (name == '' || password == '') {
-            alert('用户名密码不能为空');
+            layui.use('layer', function(){
+                var layer = layui.layer;
+                layer.msg('用户名或密码不能为空。');
+            });
+
             return false;
         }
+
         $('.login').addClass('test');
 
         setTimeout(function () {
@@ -117,14 +124,14 @@
             $.post('/backend/login', {name: name, password: password}, function (data) {
                 if (data.status == 'success') {
                     $('.success h2').html('认证成功');
-                    $('.success p').html('页面跳转中  <a href="/backend">点击跳转</a>');
+                    $('.success p').html('页面跳转中  <a href="/backend" style="color: #fff">点击跳转</a>');
                     setTimeout(function () {
                         location.href = '/backend';
                     }, 500);
                 } else {
                     $('.success h2').html('认证失败');
                     $('.success p').html(data.message);
-                    $('.success').append('<a href="./">返回重新登录</a>');
+                    $('.success').append('<a href="./" style="color:#fff;position: relative;top: 10em;cursor: pointer;">返回重新登录</a>');
                 }
                 $('.success').fadeIn();
             })
@@ -159,5 +166,12 @@
             $(this).parent().animate({ 'left': '0' });
         });
     });
+
+    $('.forgot-password').click(function () {
+        layui.use('layer', function(){
+            var layer = layui.layer;
+            layer.msg('是不是傻？？那么简单的密码都忘记！', {icon: 5});
+        });
+    })
 </script>
 </html>

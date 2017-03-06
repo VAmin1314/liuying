@@ -26,23 +26,25 @@
         </header>
         <!-- Grid -->
         <section class="slider">
-            <div class="slide slide--current" data-content="content-1">
+            @foreach($photo as $k => $v)
+            <div class="slide @if($k == 0) slide--current @endif" data-content="content-{{ $k+1 }}">
                 <div class="slide__mover">
                     <div class="zoomer flex-center">
-                        <img class="zoomer__image" src="images/4.png" alt="iPhone" style="max-width: 400px; max-height: 400px" />
+                    <img class="zoomer__image" src="{{ $v->path }}" alt="{{ $v->title }}" style="max-width: 400px; max-height: 400px" />
                         <div class="preview">
                             <div class="zoomer__area zoomer__area--size-2"></div>
                         </div>
                     </div>
                 </div>
                 <h2 class="slide__title">
-                    <span>潘凯丽</span> 小屁孩
+                    <span>小屁孩</span> {{ $v->title }}
                 </h2>
             </div>
+            @endforeach
             <div class="slide" data-content="content-2">
                 <div class="slide__mover">
                     <div class="zoomer flex-center">
-                        <img class="zoomer__image" src="images/1.jpg" alt="iPhone" style="max-width: 400px; max-height: 400px" />
+                        <img class="zoomer__image" src="/images/1.jpg" alt="iPhone" style="max-width: 400px; max-height: 400px" />
                         <div class="preview">
                             <div class="zoomer__area zoomer__area--size-2"></div>
                         </div>
@@ -55,7 +57,7 @@
             <div class="slide" data-content="content-3">
                 <div class="slide__mover">
                     <div class="zoomer flex-center">
-                        <img class="zoomer__image" src="images/2.jpg" alt="iPhone" style="max-width: 400px; max-height: 400px" />
+                        <img class="zoomer__image" src="/images/2.jpg" alt="iPhone" style="max-width: 400px; max-height: 400px" />
                         <div class="preview">
                             <div class="zoomer__area zoomer__area--size-2"></div>
                         </div>
@@ -68,7 +70,7 @@
             <div class="slide" data-content="content-4">
                 <div class="slide__mover">
                     <div class="zoomer flex-center">
-                        <img class="zoomer__image" src="images/3.jpg" alt="iPhone" style="max-width: 400px; max-height: 400px" />
+                        <img class="zoomer__image" src="/images/3.jpg" alt="iPhone" style="max-width: 400px; max-height: 400px" />
                         <div class="preview">
                             <div class="zoomer__area zoomer__area--size-2"></div>
                         </div>
@@ -97,15 +99,17 @@
         </section>
         <!-- /slider-->
         <section class="content">
-            <div class="content__item" id="content-1">
-                <img class="content__item-img rounded-right" src="images/4.png" alt="Apple Watch Content" />
+            @foreach($photo as $k => $v)
+            <div class="content__item" id="content-{{ $k+1 }}">
+                <img class="content__item-img rounded-right" src="{{ $v->path }}" alt="{{ $v->title }}" />
                 <div class="content__item-inner">
-                    <h2>The iPhone 6</h2>
-                    <h3>Incredible performance for powerful apps</h3>
-                    <p>Built on 64-bit desktop-class architecture, the new A8 chip delivers more power, even while driving a larger display. The M8 motion coprocessor efficiently gathers data from advanced sensors and a new barometer. And with increased battery life, iPhone 6 lets you do more, for longer than ever.</p>
-                    <p><a href="#">Learn more about this technology &xrarr;</a></p>
+                    <h2>{{ $v->title }}</h2>
+                    <h3>{{ $v->little_title }}</h3>
+                    <p>{{ $v->description }}</p>
+                    <!-- <p><a href="#"></a></p> -->
                 </div>
             </div>
+            @endforeach
             <div class="content__item" id="content-2">
                 <img class="content__item-img rounded-right" src="images/1.jpg" alt="Apple Watch Content" />
                 <div class="content__item-inner">
@@ -140,8 +144,8 @@
             </button>
         </section>
     </div>
-    <script src="home/js/classie.js"></script>
-    <script src="home/js/dynamics.min.js"></script>
-    <script src="home/js/main.js"></script>
+    <script src="/home/js/classie.js"></script>
+    <script src="/home/js/dynamics.min.js"></script>
+    <script src="/home/js/main.js"></script>
 </body>
 </html>
