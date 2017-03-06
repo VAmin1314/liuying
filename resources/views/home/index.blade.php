@@ -26,6 +26,7 @@
         </header>
         <!-- Grid -->
         <section class="slider">
+            @if (count($photo))
             @foreach($photo as $k => $v)
             <div class="slide @if($k == 0) slide--current @endif" data-content="content-{{ $k+1 }}">
                 <div class="slide__mover">
@@ -41,6 +42,7 @@
                 </h2>
             </div>
             @endforeach
+            @endif
             <div class="slide" data-content="content-2">
                 <div class="slide__mover">
                     <div class="zoomer flex-center">
@@ -99,6 +101,7 @@
         </section>
         <!-- /slider-->
         <section class="content">
+            @if (count($photo))
             @foreach($photo as $k => $v)
             <div class="content__item" id="content-{{ $k+1 }}">
                 <img class="content__item-img rounded-right" src="{{ $v->path }}" alt="{{ $v->title }}" />
@@ -110,6 +113,7 @@
                 </div>
             </div>
             @endforeach
+            @endif
             <div class="content__item" id="content-2">
                 <img class="content__item-img rounded-right" src="images/1.jpg" alt="Apple Watch Content" />
                 <div class="content__item-inner">
