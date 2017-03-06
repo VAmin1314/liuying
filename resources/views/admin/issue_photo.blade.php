@@ -42,44 +42,44 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">标题</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" placeholder="图片的大标题">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">小标题</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control">
-                    <span class="help-block">介绍</span>
+                    <input type="text" class="form-control" placeholder="图片的小标题，可以不写">
+                    <!-- <span class="help-block">介绍</span> -->
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">拍摄时间</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="text" placeholder="图片的拍摄时间">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">拍摄地点</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="图片的拍摄地点">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">描述</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control round-input">
+                    <textarea class="form-control" rows="5" placeholder="图片的详细描述，写的少的话，会很难看，所以你看着办吧"></textarea>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">Disabled</label>
+                <label class="col-sm-2 control-label">图片</label>
                 <div class="col-sm-10">
-                    <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">
+                    <input type="file" class="form-control" placeholder="">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">Placeholder</label>
+                <label class="col-sm-2 control-label"></label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" placeholder="placeholder">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Password</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" placeholder="">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-lg-2 control-label">Static control</label>
-                <div class="col-lg-10">
-                    <p class="form-control-static">email@example.com</p>
+                    <button type="button" class="btn btn-info">确认提交</button>
                 </div>
             </div>
         </form>
