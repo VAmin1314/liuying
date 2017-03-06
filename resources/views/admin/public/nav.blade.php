@@ -22,6 +22,18 @@
                     </li>
                 </ul>
             </li>
+            <li class="sub-menu @yield('setting')">
+                <a href="javascript:;">
+                    <i class="icon-book"></i>
+                    <span>系统设置</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub">
+                    <li class="@yield('commonSetting')">
+                        <a href="/backend/setting">通用设置</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </div>
 </aside>

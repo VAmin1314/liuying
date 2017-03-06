@@ -17,6 +17,9 @@
     <script src="/home/js/modernizr.custom.js"></script>
 </head>
 <body>
+    @if (!empty($setting->bgsound))
+    <audio id="bgaudio" src="{{ $setting->bgsound }}" autoplay="autoplay" style="display: none"></audio>
+    @endif
     <!-- Main container -->
     <div class="container">
         <!-- Blueprint header -->
@@ -31,7 +34,7 @@
             <div class="slide @if($k == 0) slide--current @endif" data-content="content-{{ $k+1 }}">
                 <div class="slide__mover">
                     <div class="zoomer flex-center">
-                    <img class="zoomer__image" src="{{ $v->path }}" alt="{{ $v->title }}" style="max-width: 400px; max-height: 400px" />
+                        <img class="zoomer__image" src="{{ $v->path }}" alt="{{ $v->title }}" style="max-width: 400px; max-height: 400px" />
                         <div class="preview">
                             <div class="zoomer__area zoomer__area--size-2"></div>
                         </div>
@@ -46,7 +49,7 @@
             <div class="slide slide--current" data-content="content-1">
                 <div class="slide__mover">
                     <div class="zoomer flex-center">
-                    <img class="zoomer__image" src="/images/4.png" alt="默认图片" style="max-width: 400px; max-height: 400px" />
+                        <img class="zoomer__image" src="/images/4.png" alt="默认图片" style="max-width: 400px; max-height: 400px" />
                         <div class="preview">
                             <div class="zoomer__area zoomer__area--size-2"></div>
                         </div>

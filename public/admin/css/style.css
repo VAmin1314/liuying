@@ -152,13 +152,13 @@ a, a:hover, a:focus {
     background: #5193ea;
     margin-right: 22px;
     box-shadow: 0 4px #2775e2;
-	float:left;
+    float:left;
 }
 
 .login-social-link a.twitter {
     background: #44ccfe;
     box-shadow: 0 4px #2bb4e8;
-	float:left;
+    float:left;
 }
 
 /*sidebar navigation*/
@@ -1377,8 +1377,8 @@ h3.timeline-title {
 /*easy pie chart*/
 
 .easy-pie-chart {
-   display: inline-block;
-   padding: 30px 0;
+ display: inline-block;
+ padding: 30px 0;
 }
 
 .chart-info, .chart-info .increase, .chart-info .decrease {
@@ -1425,7 +1425,7 @@ h3.timeline-title {
     .panel-footer.revenue-foot {
         margin-bottom: -4px;
     };
-    }
+}
 
 
 .panel-footer.revenue-foot ul  {
@@ -1823,11 +1823,11 @@ ul.ft-link li a i {
 }
 
 .follower img {
-   border-radius: 50%;
-   -webkit-border-radius: 50%;
-    width: 62px;
-    height: 62px;
-    /*display: inline-block;*/
+ border-radius: 50%;
+ -webkit-border-radius: 50%;
+ width: 62px;
+ height: 62px;
+ /*display: inline-block;*/
 }
 
 /*weather*/
@@ -2041,7 +2041,7 @@ ul.inbox-nav li a i {
 }
 
 ul.inbox-nav li a span.label {
-   margin-top: 13px;
+ margin-top: 13px;
 }
 
 ul.labels-info li h4 {
@@ -2054,7 +2054,7 @@ ul.labels-info li h4 {
 }
 
 ul.labels-info li  {
-   margin: 0;
+ margin: 0;
 }
 
 ul.labels-info li a {
@@ -2602,8 +2602,8 @@ ul.summary-list > li:last-child  {
 }
 
 .activity.alt .activity-desk .panel {
-   float: right;
-    position: relative;
+ float: right;
+ position: relative;
 }
 
 .activity-desk .panel {
@@ -3085,7 +3085,7 @@ ul.amounts li {
 
 .form-horizontal.tasi-form .checkbox-inline > input {
     margin-top: 1px;
-	border:none;
+    border:none;
 }
 
 
@@ -3196,13 +3196,11 @@ table.sliders tr td {
     margin-bottom: 15px;
 }
 
-
 /*----switch ----*/
-
-
 .has-switch {
-    border-radius: 30px;
-    -webkit-border-radius: 30px;
+    max-height: 30px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
     display: inline-block;
     cursor: pointer;
     line-height: 1.231;
