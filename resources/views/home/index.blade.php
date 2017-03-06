@@ -9,12 +9,12 @@
     <meta name="keywords" content="小屁孩, 潘凯丽" />
     <link rel="shortcut icon" href="images/ico.png">
     <!-- Feather Icons -->
-    <link rel="stylesheet" type="text/css" href="fonts/feather/style.css">
+    <link rel="stylesheet" type="text/css" href="/fonts/feather/style.css">
     <!-- General demo styles & header -->
-    <link rel="stylesheet" type="text/css" href="home/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="/home/css/demo.css" />
     <!-- Component styles -->
-    <link rel="stylesheet" type="text/css" href="home/css/component.css" />
-    <script src="home/js/modernizr.custom.js"></script>
+    <link rel="stylesheet" type="text/css" href="/home/css/component.css" />
+    <script src="/home/js/modernizr.custom.js"></script>
 </head>
 <body>
     <!-- Main container -->
