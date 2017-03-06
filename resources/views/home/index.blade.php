@@ -53,7 +53,8 @@
                     </div>
                 </div>
                 <h2 class="slide__title">
-                    <span>小屁孩</span> 没有图片数据，给你看一张最好看的吧！
+                    <span>小屁孩</span>
+                    <p>没有图片数据，给你看一张最好看的吧！</p>
                 </h2>
             </div>
             @endif
