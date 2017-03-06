@@ -43,7 +43,7 @@
             </div>
             @endforeach
             @else
-            <div class="slide @if($k == 0) slide--current @endif" data-content="content-1">
+            <div class="slide slide--current" data-content="content-1">
                 <div class="slide__mover">
                     <div class="zoomer flex-center">
                     <img class="zoomer__image" src="/images/4.png" alt="默认图片" style="max-width: 400px; max-height: 400px" />
