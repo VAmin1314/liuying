@@ -74,10 +74,10 @@
                 <label class="col-sm-2 control-label">是否允许访问</label>
                 <div class="col-sm-10">
                     <label class="radio-inline">
-                        <input type="radio" name="is_allow" id="inlineRadio1" value="1" @if ($data->is_allow == 1) checked @endif> 允许
+                        <input type="radio" name="is_allow" id="inlineRadio1" value="1" @if (!empty($data->is_allow) && $data->is_allow == 1) checked @endif> 允许
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="is_allow" id="inlineRadio2" value="0" @if ($data->is_allow == 0) checked @endif> 不允许
+                        <input type="radio" name="is_allow" id="inlineRadio2" value="0" @if (!empty($data->is_allow) && $data->is_allow == 0) checked @endif> 不允许
                     </label>
                 </div>
             </div>
