@@ -43,7 +43,8 @@
             </div>
             @endforeach
             @endif
-            <div class="slide" data-content="content-2">
+
+<!-- <div class="slide" data-content="content-2">
                 <div class="slide__mover">
                     <div class="zoomer flex-center">
                         <img class="zoomer__image" src="/images/1.jpg" alt="iPhone" style="max-width: 400px; max-height: 400px" />
@@ -81,8 +82,7 @@
                 <h2 class="slide__title">
                     <span>潘凯丽</span> 小屁孩
                 </h2>
-            </div>
-
+            </div> -->
 
             <nav class="slider__nav">
                 <button class="button button--nav-prev">
@@ -114,7 +114,7 @@
             </div>
             @endforeach
             @endif
-            <div class="content__item" id="content-2">
+            <!-- <div class="content__item" id="content-2">
                 <img class="content__item-img rounded-right" src="images/1.jpg" alt="Apple Watch Content" />
                 <div class="content__item-inner">
                     <h2>The iPhone 6</h2>
@@ -140,7 +140,7 @@
                     <p>Built on 64-bit desktop-class architecture, the new A8 chip delivers more power, even while driving a larger display. The M8 motion coprocessor efficiently gathers data from advanced sensors and a new barometer. And with increased battery life, iPhone 6 lets you do more, for longer than ever.</p>
                     <p><a href="#">Learn more about this technology &xrarr;</a></p>
                 </div>
-            </div>
+            </div> -->
 
             <button class="button button--close">
                 <i class="icon icon--circle-cross"></i>
