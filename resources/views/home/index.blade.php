@@ -42,6 +42,20 @@
                 </h2>
             </div>
             @endforeach
+            @else
+            <div class="slide @if($k == 0) slide--current @endif" data-content="content-1">
+                <div class="slide__mover">
+                    <div class="zoomer flex-center">
+                    <img class="zoomer__image" src="/images/4.png" alt="默认图片" style="max-width: 400px; max-height: 400px" />
+                        <div class="preview">
+                            <div class="zoomer__area zoomer__area--size-2"></div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="slide__title">
+                    <span>小屁孩</span> 没有图片数据，给你看一张最好看的吧！
+                </h2>
+            </div>
             @endif
 
 <!-- <div class="slide" data-content="content-2">
@@ -83,7 +97,7 @@
                     <span>潘凯丽</span> 小屁孩
                 </h2>
             </div> -->
-
+            @if (count($photo))
             <nav class="slider__nav">
                 <button class="button button--nav-prev">
                     <i class="icon icon--arrow-left"></i>
@@ -98,6 +112,7 @@
                     <span class="text-hidden">Next product</span>
                 </button>
             </nav>
+            @endif
         </section>
         <!-- /slider-->
         <section class="content">
@@ -113,6 +128,8 @@
                 </div>
             </div>
             @endforeach
+            @else
+
             @endif
             <!-- <div class="content__item" id="content-2">
                 <img class="content__item-img rounded-right" src="images/1.jpg" alt="Apple Watch Content" />
@@ -141,7 +158,6 @@
                     <p><a href="#">Learn more about this technology &xrarr;</a></p>
                 </div>
             </div> -->
-
             <button class="button button--close">
                 <i class="icon icon--circle-cross"></i>
                 <span class="text-hidden">Close content</span>
