@@ -210,6 +210,7 @@
             <!-- <li>
                 <input type="text" class="form-control search" placeholder="Search">
             </li> -->
+            <li><a href="/">去前台首页</a></li>
             <li class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                     <img alt="" src="/images/ico.png" style="max-height: 29px;max-width: 29px">
