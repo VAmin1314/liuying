@@ -28,6 +28,22 @@
         });
 
         $('select.styled').customSelect();
+
+        // 删除上传的图片
+        $('.del-photo').click(function () {
+            var id = $(this).attr('data-id');
+            layui.use('layer', function(){
+                var layer = layui.layer;
+                layer.confirm('真的要把这么美丽的图片删掉？', {
+                    btn: ['就是要删', '突然不想删了']
+                }, function () {
+                    $.post('/backend/delPhoto', {id: id}, function (data) {
+                        layer.msg('真尼玛残忍！', {icon: 1});
+                        location.href = '';
+                    })
+                });
+            })
+        })
     });
 </script>
 @endsection
@@ -51,17 +67,25 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($data as $k => $v)
                     <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
+                        <td>{{ $v->id }}</td>
+                        <td>{{ $v->title }}</td>
+                        <td>{{ $v->little_title }}</td>
+                        <td>{{ $v->created_at }}</td>
                         <td>
-                            <button class="btn btn-primary btn-xs"><i class="icon-pencil"></i></button>
-                            <button class="btn btn-danger btn-xs"><i class="icon-trash "></i></button>
+                            <img src="{{ $v->path }}" style="max-width: 200px;max-height: 100px">
+                        </td>
+                        <td>
+                            <a class="btn btn-primary" href="/backend/editPhoto/{{ $v->id }}">
+                                <i class="icon-pencil"></i>
+                            </a>
+                            <button class="btn btn-danger del-photo" data-id="{{ $v->id }}">
+                                <i class="icon-trash"></i>
+                            </button>
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </section>

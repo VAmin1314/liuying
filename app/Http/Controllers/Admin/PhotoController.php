@@ -9,14 +9,71 @@ use App\Model\Photo;
 
 class PhotoController extends Controller
 {
+    // 图片模型
+    protected $photo;
+
+    /**
+     * 构造方法
+     * @Author   LiuJian
+     * @DateTime 2017-03-06
+     */
+    public function __construct (Photo $photo)
+    {
+        $this->photo = $photo;
+    }
+
     public function index ()
     {
-        return view('admin.photo_list');
+        $data = $this->photo->paginate(15);
+
+        return view('admin.photo_list', compact('data'));
     }
 
     public function issuePhoto ()
     {
         return view('admin.issue_photo');
+    }
+
+    /**
+     * 保存图片编辑信息
+     * @Author   LiuJian
+     * @DateTime 2017-03-06
+     * @param    Request    $request [description]
+     * @param    [type]     $id      [description]
+     * @return   [type]              [description]
+     */
+    public function saveEditPhoto (Request $request, $id)
+    {
+        $data = $request->except('_token');
+        $photo = $this->photo->find($id);
+        $photo->update($data);
+
+        return redirect()->back();
+    }
+
+    /**
+     * 图片的编辑
+     * @Author   LiuJian
+     * @DateTime 2017-03-06
+     * @return   [type]     [description]
+     */
+    public function editPhoto ($id)
+    {
+        $data = $this->photo->find($id);
+
+        return view('admin.edit_photo', compact('data'));
+    }
+
+    /**
+     * 删除上传的图片
+     * @Author   LiuJian
+     * @DateTime 2017-03-06
+     * @return   [type]     [description]
+     */
+    public function delPhoto (Request $request)
+    {
+        $id = (int) $request->id;
+        return $this->photo->destroy($id);
     }
 
     /**
@@ -27,12 +84,11 @@ class PhotoController extends Controller
      */
     public function savePhoto (Request $request)
     {
-        $photo = new Photo();
-        // dd($request->all());
         $data = $request->except('_token');
         $data['admin_id'] = Session::get('admin')->id;
 
-        $photo->create($data);
+        $this->photo->create($data);
+
         return redirect()->back();
     }
 
@@ -44,7 +100,6 @@ class PhotoController extends Controller
      */
     public function getPhoto (Request $request)
     {
-
         if ($request->hasFile('photo')) {
             if ($request->file('photo')->isValid()){
                 $originalName = $request->file('photo')->getClientOriginalName(); // 文件原名
