@@ -7,9 +7,9 @@
     <title>小屁孩</title>
     <meta name="description" content="小屁孩 / 潘凯丽的照片" />
     <meta name="keywords" content="小屁孩, 潘凯丽" />
-    <link rel="shortcut icon" href="images/ico.png">
+    <link rel="shortcut icon" href="/images/ico.png">
     <!-- Feather Icons -->
-    <link rel="stylesheet" type="text/css" href="/fonts/feather/style.css">
+    <link rel="stylesheet" type="text/css" href="/home/fonts/feather/style.css">
     <!-- General demo styles & header -->
     <link rel="stylesheet" type="text/css" href="/home/css/demo.css" />
     <!-- Component styles -->
