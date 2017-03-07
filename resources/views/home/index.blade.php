@@ -7,7 +7,7 @@
     <title>小屁孩</title>
     <meta name="description" content="小屁孩 / 潘凯丽的照片" />
     <meta name="keywords" content="小屁孩, 潘凯丽" />
-    <!-- <link rel="shortcut icon" href="{empty($setting->bgsound)?'':$setting->bgsound}"> -->
+    <link rel="shortcut icon" href="{{empty($setting->icon)?'':$setting->icon}}">
     <!-- Feather Icons -->
     <link rel="stylesheet" type="text/css" href="/home/fonts/feather/style.css">
     <!-- General demo styles & header -->
@@ -29,7 +29,7 @@
         </header>
         <!-- Grid -->
         <section class="slider">
-            @if (!empty($setting->is_allow) && count($photo))
+            @if (count($photo))
             @foreach($photo as $k => $v)
             <div class="slide @if($k == 0) slide--current @endif" data-content="content-{{ $k+1 }}">
                 <div class="slide__mover">
@@ -93,39 +93,10 @@
                 </div>
             </div>
             @endforeach
-            @else
-
             @endif
-            <!-- <div class="content__item" id="content-2">
-                <img class="content__item-img rounded-right" src="images/1.jpg" alt="Apple Watch Content" />
-                <div class="content__item-inner">
-                    <h2>The iPhone 6</h2>
-                    <h3>Incredible performance for powerful apps</h3>
-                    <p>Built on 64-bit desktop-class architecture, the new A8 chip delivers more power, even while driving a larger display. The M8 motion coprocessor efficiently gathers data from advanced sensors and a new barometer. And with increased battery life, iPhone 6 lets you do more, for longer than ever.</p>
-                    <p><a href="#">Learn more about this technology &xrarr;</a></p>
-                </div>
-            </div>
-            <div class="content__item" id="content-3">
-                <img class="content__item-img rounded-right" src="images/2.jpg" alt="Apple Watch Content" />
-                <div class="content__item-inner">
-                    <h2>The iPhone 6</h2>
-                    <h3>Incredible performance for powerful apps</h3>
-                    <p>Built on 64-bit desktop-class architecture, the new A8 chip delivers more power, even while driving a larger display. The M8 motion coprocessor efficiently gathers data from advanced sensors and a new barometer. And with increased battery life, iPhone 6 lets you do more, for longer than ever.</p>
-                    <p><a href="#">Learn more about this technology &xrarr;</a></p>
-                </div>
-            </div>
-            <div class="content__item" id="content-4">
-                <img class="content__item-img rounded-right" src="images/3.jpg" alt="Apple Watch Content" />
-                <div class="content__item-inner">
-                    <h2>The iPhone 6</h2>
-                    <h3>Incredible performance for powerful apps</h3>
-                    <p>Built on 64-bit desktop-class architecture, the new A8 chip delivers more power, even while driving a larger display. The M8 motion coprocessor efficiently gathers data from advanced sensors and a new barometer. And with increased battery life, iPhone 6 lets you do more, for longer than ever.</p>
-                    <p><a href="#">Learn more about this technology &xrarr;</a></p>
-                </div>
-            </div> -->
             <button class="button button--close">
                 <i class="icon icon--circle-cross"></i>
-                <span class="text-hidden">Close content</span>
+                <span class="text-hidden"> 关闭</span>
             </button>
         </section>
     </div>

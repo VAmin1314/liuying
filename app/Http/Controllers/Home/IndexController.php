@@ -21,9 +21,14 @@ class IndexController extends Controller
 
     public function index ()
     {
-        $photo = $this->photo->where('admin_id', 1)->get();
         $setting = $this->setting->where('key', 'setting')->first();
         $setting = json_decode($setting->value);
+        $photo = [];
+
+        // 是否允许别人访问
+        if (!empty($setting->is_allow)) {
+            $photo = $this->photo->where('admin_id', 1)->get();
+        }
 
         return view('home.index', compact('photo', 'setting'));
     }
