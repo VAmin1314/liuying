@@ -7,6 +7,8 @@ use Storage;
 use Session;
 use App\Model\Photo;
 
+use Illuminate\Support\Facades\Redis;
+
 class PhotoController extends Controller
 {
     // 图片模型
@@ -19,6 +21,8 @@ class PhotoController extends Controller
      */
     public function __construct (Photo $photo)
     {
+        $info = Redis::get('1');
+        dd($info);
         $this->photo = $photo;
     }
 
@@ -109,7 +113,7 @@ class PhotoController extends Controller
 
                 // $path = $request->photo->store('upload');
                 // 上传文件
-                $filename = date('Y-m-d-H-i-s') . '-' . uniqid() . '.' . $ext;
+                $filename = date('Y-m-d_H:i:s') . '__' . uniqid() . '.' . $ext;
                 // 使用我们新建的uploads本地存储空间（目录）
                 $bool = Storage::disk('uploads')->put($filename, file_get_contents($realPath));
                 if ($bool) {

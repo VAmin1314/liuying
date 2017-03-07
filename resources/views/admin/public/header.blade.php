@@ -3,7 +3,7 @@
         <!-- <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div> -->
     </div>
 
-    <a href="javascript:;" class="logo">By <span>LiuJian</span></a>
+    <a href="/" class="logo" target="_blank">By <span>LiuJian</span></a>
 
     <div class="nav notify-row" id="top_menu">
         <!--  notification start -->
@@ -210,7 +210,6 @@
             <!-- <li>
                 <input type="text" class="form-control search" placeholder="Search">
             </li> -->
-            <li><a href="/">去前台首页</a></li>
             <li class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                     <img alt="" src="/images/ico.png" style="max-height: 29px;max-width: 29px">
