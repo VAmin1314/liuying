@@ -177,8 +177,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Illuminate\Support\Facades\Redis::class,
-
     ],
 
     /*
@@ -227,9 +225,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
-        'Redis' => Illuminate\Support\Facades\Redis::class,
-
     ],
 
 ];
