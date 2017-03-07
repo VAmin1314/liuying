@@ -7,7 +7,7 @@
     <title>小屁孩</title>
     <meta name="description" content="小屁孩 / 潘凯丽的照片" />
     <meta name="keywords" content="小屁孩, 潘凯丽" />
-    <link rel="shortcut icon" href="/images/ico.png">
+    <!-- <link rel="shortcut icon" href="{empty($setting->bgsound)?'':$setting->bgsound}"> -->
     <!-- Feather Icons -->
     <link rel="stylesheet" type="text/css" href="/home/fonts/feather/style.css">
     <!-- General demo styles & header -->
@@ -29,7 +29,7 @@
         </header>
         <!-- Grid -->
         <section class="slider">
-            @if (count($photo))
+            @if (!empty($setting->is_allow) && count($photo))
             @foreach($photo as $k => $v)
             <div class="slide @if($k == 0) slide--current @endif" data-content="content-{{ $k+1 }}">
                 <div class="slide__mover">
@@ -57,50 +57,11 @@
                 </div>
                 <h2 class="slide__title">
                     <span style="margin-top: 1em;">小屁孩</span>
-                    <p>没有图片数据，给你看一张最好看的吧！</p>
+                    <p>暂时不想给你们看别的，记住我绝美的面庞吧！</p>
                 </h2>
             </div>
             @endif
 
-<!-- <div class="slide" data-content="content-2">
-                <div class="slide__mover">
-                    <div class="zoomer flex-center">
-                        <img class="zoomer__image" src="/images/1.jpg" alt="iPhone" style="max-width: 400px; max-height: 400px" />
-                        <div class="preview">
-                            <div class="zoomer__area zoomer__area--size-2"></div>
-                        </div>
-                    </div>
-                </div>
-                <h2 class="slide__title">
-                    <span>潘凯丽</span> 小屁孩
-                </h2>
-            </div>
-            <div class="slide" data-content="content-3">
-                <div class="slide__mover">
-                    <div class="zoomer flex-center">
-                        <img class="zoomer__image" src="/images/2.jpg" alt="iPhone" style="max-width: 400px; max-height: 400px" />
-                        <div class="preview">
-                            <div class="zoomer__area zoomer__area--size-2"></div>
-                        </div>
-                    </div>
-                </div>
-                <h2 class="slide__title">
-                    <span>潘凯丽</span> 小屁孩
-                </h2>
-            </div>
-            <div class="slide" data-content="content-4">
-                <div class="slide__mover">
-                    <div class="zoomer flex-center">
-                        <img class="zoomer__image" src="/images/3.jpg" alt="iPhone" style="max-width: 400px; max-height: 400px" />
-                        <div class="preview">
-                            <div class="zoomer__area zoomer__area--size-2"></div>
-                        </div>
-                    </div>
-                </div>
-                <h2 class="slide__title">
-                    <span>潘凯丽</span> 小屁孩
-                </h2>
-            </div> -->
             @if (count($photo))
             <nav class="slider__nav">
                 <button class="button button--nav-prev">

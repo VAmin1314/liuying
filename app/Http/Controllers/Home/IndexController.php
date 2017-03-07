@@ -18,6 +18,7 @@ class IndexController extends Controller
         $this->photo = $photo;
         $this->setting = $setting;
     }
+
     public function index ()
     {
         $photo = $this->photo->where('admin_id', 1)->get();
