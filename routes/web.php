@@ -35,7 +35,6 @@ Route::group($admin, function () {
     Route::get('/setting', 'SettingController@index');
     Route::post('/setting', 'SettingController@saveSetting');
 
-
     // 退出登录
     Route::get('/logout', 'LoginController@logout');
 });

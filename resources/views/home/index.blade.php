@@ -8,12 +8,11 @@
     <meta name="description" content="小屁孩 / 潘凯丽的照片" />
     <meta name="keywords" content="小屁孩, 潘凯丽" />
     <link rel="shortcut icon" href="{{empty($setting->icon)?'':$setting->icon}}">
-    <!-- Feather Icons -->
+    <!-- css -->
     <link rel="stylesheet" type="text/css" href="/home/fonts/feather/style.css">
-    <!-- General demo styles & header -->
     <link rel="stylesheet" type="text/css" href="/home/css/demo.css" />
-    <!-- Component styles -->
     <link rel="stylesheet" type="text/css" href="/home/css/component.css" />
+
     <script src="/home/js/modernizr.custom.js"></script>
 </head>
 <body>
@@ -41,7 +40,10 @@
                     </div>
                 </div>
                 <h2 class="slide__title">
-                    <span>小屁孩</span> {{ $v->title }}
+                    <span style="margin-top: 1em;">
+                        时间：{{ $v->shot_time .' 地点：'. $v->shot_add }}
+                    </span>
+                    {{ $v->title }}
                 </h2>
             </div>
             @endforeach
@@ -56,7 +58,9 @@
                     </div>
                 </div>
                 <h2 class="slide__title">
-                    <span style="margin-top: 1em;">小屁孩</span>
+                    <span style="margin-top: 1em;">
+                        <!--  -->
+                    </span>
                     <p>暂时不想给你们看别的，记住我绝美的面庞吧！</p>
                 </h2>
             </div>
@@ -84,12 +88,11 @@
             @if (count($photo))
             @foreach($photo as $k => $v)
             <div class="content__item" id="content-{{ $k+1 }}">
-                <img class="content__item-img rounded-right" src="{{ $v->path }}" alt="{{ $v->title }}" />
+                <img class="content__item-img rounded-right" src="{{ $v->path }}" />
                 <div class="content__item-inner">
                     <h2>{{ $v->title }}</h2>
                     <h3>{{ $v->little_title }}</h3>
                     <p>{{ $v->description }}</p>
-                    <!-- <p><a href="#"></a></p> -->
                 </div>
             </div>
             @endforeach
