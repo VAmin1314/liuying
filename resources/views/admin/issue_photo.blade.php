@@ -15,28 +15,18 @@
 
 <!-- 时间选择 -->
 <link type="text/css" rel="stylesheet" href="/admin/assets/bootstrap-datepicker/css/datepicker.css" />
-<link type="text/css" rel="stylesheet" href="/admin/assets/bootstrap-colorpicker/css/colorpicker.css" />
-<link type="text/css" rel="stylesheet" href="/admin/assets/bootstrap-daterangepicker/daterangepicker.css" />
 @endsection
 
 @section('js')
 <!--script for this page-->
 <script src="/admin/js/sparkline-chart.js"></script>
 <script src="/admin/js/easy-pie-chart.js"></script>
+<!-- 时间选择器 -->
 
-<script src="/admin/js/jquery-ui-1.9.2.custom.min.js"></script>
-
-<!--custom switch-->
 <script src="/admin/js/bootstrap-switch.js"></script>
-<!--custom tagsinput-->
 <script src="/admin/js/jquery.tagsinput.js"></script>
-<script type="text/javascript" src="/admin/js/ga.js"></script>
 <script type="text/javascript" src="/admin/assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-<script type="text/javascript" src="/admin/assets/bootstrap-daterangepicker/date.js"></script>
-<script type="text/javascript" src="/admin/assets/bootstrap-daterangepicker/daterangepicker.js"></script>
 <script type="text/javascript" src="/admin/assets/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
-<script type="text/javascript" src="/admin/assets/ckeditor/ckeditor.js"></script>
-<script src="/admin/js/form-component.js"></script>
 <script>
     $(function(){
         $("#owl-demo").owlCarousel({
@@ -47,6 +37,10 @@
         });
 
         $('select.styled').customSelect();
+
+        $('#dp1').datepicker({
+            format: 'yyyy-mm-dd'
+        });
 
         layui.use('upload', function(){
             layui.upload({
@@ -107,7 +101,7 @@
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">拍摄地点</label>
-                <div class="col-sm-10">
+                <div class="col-sm-4">
                     <input type="text" autocomplete="off" name="shot_add" class="form-control" placeholder="图片的拍摄地点">
                 </div>
             </div>
