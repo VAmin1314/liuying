@@ -21,8 +21,6 @@ class PhotoController extends Controller
      */
     public function __construct (Photo $photo)
     {
-        $info = Redis::get('1');
-        dd($info);
         $this->photo = $photo;
     }
 
