@@ -7,18 +7,18 @@
     <title>小屁孩</title>
     <meta name="description" content="小屁孩 / 潘凯丽的照片" />
     <meta name="keywords" content="小屁孩, 潘凯丽" />
-    <link rel="shortcut icon" href="{{empty($setting->icon)?'':$setting->icon}}">
+    <link rel="shortcut icon" href="{{empty($setting->icon)?'/images/ico.png':$setting->icon}}">
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="/home/fonts/feather/style.css">
     <link rel="stylesheet" type="text/css" href="/home/css/demo.css" />
     <link rel="stylesheet" type="text/css" href="/home/css/component.css" />
-
-    <script src="/home/js/modernizr.custom.js"></script>
+    <!-- 播放器 -->
+    <link rel="stylesheet" href="/home/css/player.css">
 </head>
 <body>
-    @if (!empty($setting->bgsound))
+    <!-- @if (!empty($setting->bgsound))
     <audio id="bgaudio" src="{{ $setting->bgsound }}" autoplay="autoplay" style="display: none"></audio>
-    @endif
+    @endif -->
     <!-- Main container -->
     <div class="container">
         <!-- Blueprint header -->
@@ -59,7 +59,6 @@
                 </div>
                 <h2 class="slide__title">
                     <span style="margin-top: 1em;">
-                        <!--  -->
                     </span>
                     <p>暂时不想给你们看别的，记住我绝美的面庞吧！</p>
                 </h2>
@@ -103,8 +102,66 @@
             </button>
         </section>
     </div>
-    <script src="/home/js/classie.js"></script>
-    <script src="/home/js/dynamics.min.js"></script>
-    <script src="/home/js/main.js"></script>
+
+    <!-- 播放器 -->
+    <div id="QPlayer" style="z-index: 11111">
+        <div id="pContent">
+            <div id="player">
+                <span class="cover"></span>
+                <div class="ctrl">
+                    <div class="musicTag marquee">
+                        <strong>Title</strong>
+                        <span> - </span>
+                        <span class="artist">Artist</span>
+                    </div>
+                    <div class="progress">
+                        <div class="timer left">0:00</div>
+                        <div class="contr">
+                            <div class="rewind icon"></div>
+                            <div class="playback icon"></div>
+                            <div class="fastforward icon"></div>
+                        </div>
+                        <div class="right">
+                            <div class="liebiao icon"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ssBtn">
+                <div class="adf"></div>
+            </div>
+        </div>
+        <div id="playlist"></div>
+    </div>
+    <!-- 播放器end -->
 </body>
+<script src="/home/js/jquery.min.js"></script>
+<script src="/home/js/modernizr.custom.js"></script>
+<script src="/home/js/classie.js"></script>
+<script src="/home/js/dynamics.min.js"></script>
+<script src="/home/js/main.js"></script>
+
+<!-- 播放器 -->
+<script src="/home/js/jquery.marquee.min.js"></script>
+<script>
+    var playlist = [
+    {
+        title:"最幸福的事",
+        artist:"梁文音",
+        mp3:"@if (!empty($setting->bgsound)) {{ $setting->bgsound }} @endif",
+        cover:"http://musicdata.baidu.com/data2/pic/26418b044183959c716ebe1c360eee85/262031072/262031072.jpg@s_0,w_300",
+    },
+    ];
+
+    var isRotate = true;
+    var autoplay = true;
+
+    $(function () {
+        var lis= $('.lib');
+        for(var i=0; i<lis.length; i+=2){
+            lis[i].style.background = 'rgba(246, 246, 246, 0.5)';
+        }
+    })
+</script>
+<script src="/home/js/player.js"></script>
 </html>
