@@ -1,9 +1,10 @@
 #QPlayer {
 	position:fixed;
 	overflow:hidden;
-	bottom:62px;
+	bottom:5px;
 	left:-250px;
 	transition:transform .5s ease;
+    border-radius: 1px;
 }
 #QPlayer .left {
 	float:left;
