@@ -220,29 +220,32 @@
             }
         });
 
-        $("#player .cover").on('click', function () {
-            music.isShuffle = music.isShuffle;
-            if (this.property.isShuffle) {
-                $("#player .cover").attr("title", "点击关闭随机播放");
+        // $("#player .cover").on('click', function () {
+        //     isShuffle = music.property.isShuffle;
+        //     if (isShuffle) {
+        //         $("#player .cover").attr("title", "点击关闭随机播放");
 
-                var temp = [];
-                for (var i = 0; i < music.playlist.length; i++) {
-                    temp[i] = i;
-                }
-                music.shuffleArray = shuffle(temp);
-                for (var j = 0; j < music.shuffleArray.length; j++) {
-                    if (music.shuffleArray[j] === music.currentTrack) {
-                        music.shuffleIndex = j;
-                        break;
-                    }
-                }
-                localStorage.qplayer_shuffle_array = JSON.stringify(music.shuffleArray);
-            } else {
-                $("#player .cover").attr("title", "点击开启随机播放");
-                localStorage.removeItem('qplayer_shuffle_array');
-            }
-            localStorage.qplayer = music.isShuffle;
-        });
+        //         var temp = [];
+        //         for (var i = 0; i < music.playlist.length; i++) {
+        //             temp[i] = i;
+        //         }
+
+        //         shuffleArray = music.shuffle(temp);
+        //         for (var j = 0; j < shuffleArray.length; j++) {
+        //             if (shuffleArray[j] === music.property.currentTrack) {
+        //                 shuffleIndex = j;
+        //                 break;
+        //             }
+        //         }
+
+        //         localStorage.qplayer_shuffle_array = JSON.stringify(music.shuffleArray);
+        //     } else {
+        //         $("#player .cover").attr("title", "点击开启随机播放");
+        //         localStorage.removeItem('qplayer_shuffle_array');
+        //     }
+
+        //     localStorage.qplayer = music.isShuffle;
+        // });
 
         $("#QPlayer .ssBtn").on('click', function () {
             var mA = $("#QPlayer");
@@ -297,7 +300,6 @@
         });
 
         $('#playlist').on('click', 'li.lib', function () {
-            console.log(1);
             if (music.isShuffle) {
                 music.shufflePlay(1);
             } else {
