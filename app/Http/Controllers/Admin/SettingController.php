@@ -25,7 +25,7 @@ class SettingController extends Controller
         $data = $this->setting->where('key', 'setting')->first();
         $data = json_decode($data->value);
 
-        return view('admin.setting', compact('data'));
+        return view('admin.setting.setting', compact('data'));
     }
 
     /**

@@ -20,9 +20,16 @@ class LoginController extends Controller
 
     public function index ()
     {
-        return view('admin.login');
+        return view('admin.login.login');
     }
 
+    /**
+     * 用户登录
+     * @Author   LiuJian
+     * @DateTime 2017-03-10
+     * @param    Request    $request [Request 实例]
+     * @return   json              [信息]
+     */
     public function login (Request $request)
     {
         $name = $request->name;
@@ -41,9 +48,16 @@ class LoginController extends Controller
         }
     }
 
+    /**
+     * 退出
+     * @Author   LiuJian
+     * @DateTime 2017-03-10
+     * @return   [重定向]     [返回登录界面]
+     */
     public function logout ()
     {
         Session::forget('admin');
+
         return redirect('/backend/login');
     }
 }

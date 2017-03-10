@@ -5,35 +5,35 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Storage;
 use Session;
-use App\Model\Photo;
+use App\Model\Music;
 
 use Illuminate\Support\Facades\Redis;
 
-class PhotoController extends Controller
+class MusicController extends Controller
 {
     // 图片模型
-    protected $photo;
+    protected $music;
 
     /**
      * 构造方法
      * @Author   LiuJian
      * @DateTime 2017-03-06
      */
-    public function __construct (Photo $photo)
+    public function __construct (Music $music)
     {
-        $this->photo = $photo;
+        $this->music = $music;
     }
 
     public function index ()
     {
-        $data = $this->photo->paginate(15);
+        $data = $this->music->paginate(15);
 
-        return view('admin.photo.photo_list', compact('data'));
+        return view('admin.music.music_list', compact('data'));
     }
 
-    public function issuePhoto ()
+    public function issueMusic ()
     {
-        return view('admin.photo.issue_photo');
+        return view('admin.music.issue_music');
     }
 
     /**
@@ -44,11 +44,11 @@ class PhotoController extends Controller
      * @param    [type]     $id      [description]
      * @return   [type]              [description]
      */
-    public function saveEditPhoto (Request $request, $id)
+    public function saveEditMusic (Request $request, $id)
     {
         $data = $request->except('_token');
-        $photo = $this->photo->find($id);
-        $photo->update($data);
+        $music = $this->music->find($id);
+        $music->update($data);
 
         return redirect()->back();
     }
@@ -59,11 +59,11 @@ class PhotoController extends Controller
      * @DateTime 2017-03-06
      * @return   [type]     [description]
      */
-    public function editPhoto ($id)
+    public function editMusic ($id)
     {
-        $data = $this->photo->find($id);
+        $data = $this->music->find($id);
 
-        return view('admin.photo.edit_photo', compact('data'));
+        return view('admin.music.edit_music', compact('data'));
     }
 
     /**
@@ -72,10 +72,10 @@ class PhotoController extends Controller
      * @DateTime 2017-03-06
      * @return   [type]     [description]
      */
-    public function delPhoto (Request $request)
+    public function delMusic (Request $request)
     {
         $id = (int) $request->id;
-        return $this->photo->destroy($id);
+        return $this->music->destroy($id);
     }
 
     /**
@@ -84,12 +84,12 @@ class PhotoController extends Controller
      * @DateTime 2017-03-06
      * @return   [type]     [description]
      */
-    public function savePhoto (Request $request)
+    public function saveMusic (Request $request)
     {
         $data = $request->except('_token');
         $data['admin_id'] = Session::get('admin')->id;
 
-        $this->photo->create($data);
+        $this->music->create($data);
 
         return redirect()->back();
     }
@@ -100,16 +100,16 @@ class PhotoController extends Controller
      * @DateTime 2017-03-06
      * @return   [type]     [description]
      */
-    public function getPhoto (Request $request)
+    public function getMusic (Request $request)
     {
-        if ($request->hasFile('photo')) {
-            if ($request->file('photo')->isValid()){
-                $originalName = $request->file('photo')->getClientOriginalName(); // 文件原名
-                $ext = $request->file('photo')->getClientOriginalExtension();     // 扩展名
-                $realPath = $request->file('photo')->getRealPath();   // 临时文件的绝对路径
-                $type = $request->file('photo')->getClientMimeType();     // image/jpeg
+        if ($request->hasFile('music')) {
+            if ($request->file('music')->isValid()){
+                $originalName = $request->file('music')->getClientOriginalName(); // 文件原名
+                $ext = $request->file('music')->getClientOriginalExtension();     // 扩展名
+                $realPath = $request->file('music')->getRealPath();   // 临时文件的绝对路径
+                $type = $request->file('music')->getClientMimeType();     // image/jpeg
 
-                // $path = $request->photo->store('upload');
+                // $path = $request->music->store('upload');
                 // 上传文件
                 $filename = date('Y-m-d_H:i:s') . '__' . uniqid() . '.' . $ext;
                 // 使用我们新建的uploads本地存储空间（目录）

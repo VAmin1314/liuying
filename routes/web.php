@@ -31,6 +31,15 @@ Route::group($admin, function () {
     Route::post('/getPhoto', 'PhotoController@getPhoto');
     Route::post('/delPhoto', 'PhotoController@delPhoto');
 
+    // 音乐
+    Route::get('/musicList', 'MusicController@index');
+    Route::get('/issueMusic', 'MusicController@issueMusic');
+    Route::get('/editMusic/{id}', 'MusicController@editMusic');
+    Route::post('/editMusic/{id}', 'MusicController@saveEditMusic');
+    Route::post('/issueMusic', 'MusicController@saveMusic');
+    Route::post('/getMusic', 'MusicController@getMusic');
+    Route::post('/delMusic', 'MusicController@delMusic');
+
     // 设置
     Route::get('/setting', 'SettingController@index');
     Route::post('/setting', 'SettingController@saveSetting');

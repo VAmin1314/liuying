@@ -22,6 +22,21 @@
                     </li>
                 </ul>
             </li>
+            <li class="sub-menu @yield('music')">
+                <a href="javascript:;" class="">
+                    <i class="icon-book"></i>
+                    <span>音乐列表</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub">
+                    <li class="@yield('musicList')">
+                        <a href="/backend/musicList">音乐列表</a>
+                    </li>
+                    <li class="@yield('issuePhoto')">
+                        <a href="/backend/issueMusic">添加音乐</a>
+                    </li>
+                </ul>
+            </li>
             <li class="sub-menu @yield('setting')">
                 <a href="javascript:;">
                     <i class="icon-book"></i>
