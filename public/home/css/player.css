@@ -163,7 +163,7 @@
 	text-overflow:ellipsis;
 	list-style-position:inside;
 	list-style-type:decimal;
-	cursor:default;
+	cursor:pointer;
 }
 #playlist li:hover {
 	color:#716e6e;

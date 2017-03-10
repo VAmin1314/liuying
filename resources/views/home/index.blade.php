@@ -130,6 +130,12 @@
             mp3:"@if (!empty($setting->bgsound)) {{ $setting->bgsound }} @endif",
             cover:"http://musicdata.baidu.com/data2/pic/26418b044183959c716ebe1c360eee85/262031072/262031072.jpg@s_0,w_300",
         },
+        {
+            title:"最幸福的事",
+            artist:"梁文音",
+            mp3:"@if (!empty($setting->bgsound)) {{ $setting->bgsound }} @endif",
+            cover:"http://musicdata.baidu.com/data2/pic/26418b044183959c716ebe1c360eee85/262031072/262031072.jpg@s_0,w_300",
+        },
         ];
 
         var lis= $('.lib');
