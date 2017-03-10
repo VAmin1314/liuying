@@ -202,7 +202,7 @@
             endX = event.originalEvent.targetTouches[0].screenX;
             var seekRange = Math.round((endX - startX) / 678 * 100);
             audio.currentTime += seekRange;
-            _this.setProgress(audio.currentTime);
+            music.setProgress(audio.currentTime);
         });
 
         var startX, endX;
@@ -213,7 +213,7 @@
                 endX = event.screenX;
                 var seekRange = Math.round((endX - startX) / 678 * 100);
                 audio.currentTime += seekRange;
-                _this.setProgress(audio.currentTime);
+                music.setProgress(audio.currentTime);
             }
         });
 
