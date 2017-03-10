@@ -122,15 +122,18 @@
                 }
                 _this.property.currentTrack = _this.property.shuffleArray[_this.property.shuffleIndex];
             }
-            switchTrack(_this.property.currentTrack);
+
+            _this.switchTrack(_this.property.currentTrack);
         },
         ended: function () {
             _this.pause();
             audio.currentTime = 0;
             if (_this.property.isShuffle) {
-                shufflePlay(1);
+                _this.shufflePlay(1);
             } else {
-                if (_this.property.currentTrack < _this.property.playlist.length) switchTrack(++_this.property.currentTrack);
+                if (_this.property.currentTrack < _this.property.playlist.length) {
+                    _this.switchTrack(++_this.property.currentTrack);
+                }
             }
         },
         beforeLoad: function () {
