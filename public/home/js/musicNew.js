@@ -1,4 +1,4 @@
-    var music = {
+    var LPlayer = {
         property: {
             playlist: {},
             isShowNotification: false,
@@ -6,7 +6,7 @@
             shuffleArray: [],
             shuffleIndex: '',
             isFirstPlay: localStorage.qplayer == undefined ? true : false,
-            isShuffle: localStorage.qplayer == undefined ? false : localStorage.qplayer === 'true' ? true : false,
+            isShuffle: false,
             currentTrack: 0,
             autoplay: false,
             isRotate: true
@@ -205,7 +205,7 @@
             endX = event.originalEvent.targetTouches[0].screenX;
             var seekRange = Math.round((endX - startX) / 678 * 100);
             audio.currentTime += seekRange;
-            music.setProgress(audio.currentTime);
+            LPlayer.setProgress(audio.currentTime);
         });
 
         var startX, endX;
@@ -216,7 +216,7 @@
                 endX = event.screenX;
                 var seekRange = Math.round((endX - startX) / 678 * 100);
                 audio.currentTime += seekRange;
-                music.setProgress(audio.currentTime);
+                LPlayer.setProgress(audio.currentTime);
             }
         });
 
@@ -277,37 +277,30 @@
 
         $('.playback').on('click', function () {
             if ($(this).hasClass('playing')) {
-                music.pause();
+                LPlayer.pause();
             } else {
-                music.play();
+                LPlayer.play();
             }
         });
 
         $('.rewind').on('click', function () {
-            if (music.isShuffle) {
-                music.shufflePlay(0);
+            if (LPlayer.isShuffle) {
+                LPlayer.shufflePlay(0);
             } else {
-                music.switchTrack(--(music.property.currentTrack));
+                LPlayer.switchTrack(--(LPlayer.property.currentTrack));
             }
         });
 
         $('.fastforward').on('click', function () {
-            if (music.isShuffle) {
-                music.shufflePlay(1);
+            if (LPlayer.isShuffle) {
+                LPlayer.shufflePlay(1);
             } else {
-                music.switchTrack(++(music.property.currentTrack));
+                LPlayer.switchTrack(++(LPlayer.property.currentTrack));
             }
         });
 
         $('#playlist').on('click', 'li.lib', function () {
-            if (music.isShuffle) {
-                music.shufflePlay(1);
-            } else {
-                music.switchTrack(++(music.property.currentTrack));
-            }
+            var num = $(this).index();
+            LPlayer.switchTrack(num);
         });
     })
-
-
-
-

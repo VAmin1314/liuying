@@ -138,7 +138,7 @@
             lis[i].style.background = 'rgba(246, 246, 246, 0.5)';
         }
 
-        music.start(playlist, true);
+        LPlayer.start(playlist, true);
     })
 </script>
 
