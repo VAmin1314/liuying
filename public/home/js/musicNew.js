@@ -9,7 +9,7 @@
             isShuffle: localStorage.qplayer == undefined ? false : localStorage.qplayer === 'true' ? true : false,
             currentTrack: 0,
             autoplay: false,
-            isRotate: true,
+            isRotate: true
         },
         start: function (playlist = {}, autoplay = false) {
             if (!playlist) {
@@ -196,118 +196,117 @@
         }
     };
 
-    $('#player .ctrl .musicTag').bind('touchstart', function (event) {
-        startX = event.originalEvent.targetTouches[0].screenX;
-    }).bind('touchmove', function (event) {
-        endX = event.originalEvent.targetTouches[0].screenX;
-        var seekRange = Math.round((endX - startX) / 678 * 100);
-        audio.currentTime += seekRange;
-        setProgress(audio.currentTime);
-    });
-
-    var startX, endX;
-    $('#player .ctrl .musicTag').mousedown(function (event) {
-        startX = event.screenX;
-    }).mousemove(function (event) {
-        if (event.which === 1) {
-            endX = event.screenX;
+    $(function () {
+        $('#player .ctrl .musicTag').bind('touchstart', function (event) {
+            startX = event.originalEvent.targetTouches[0].screenX;
+        }).bind('touchmove', function (event) {
+            endX = event.originalEvent.targetTouches[0].screenX;
             var seekRange = Math.round((endX - startX) / 678 * 100);
             audio.currentTime += seekRange;
             setProgress(audio.currentTime);
-        }
-    });
+        });
 
-    $("#player .cover").on('click', function () {
-        music.isShuffle = music.isShuffle;
-        if (this.property.isShuffle) {
-            $("#player .cover").attr("title", "点击关闭随机播放");
-            showNotification('已开启随机播放');
-
-            var temp = [];
-            for (var i = 0; i < music.playlist.length; i++) {
-                temp[i] = i;
+        var startX, endX;
+        $('#player .ctrl .musicTag').mousedown(function (event) {
+            startX = event.screenX;
+        }).mousemove(function (event) {
+            if (event.which === 1) {
+                endX = event.screenX;
+                var seekRange = Math.round((endX - startX) / 678 * 100);
+                audio.currentTime += seekRange;
+                setProgress(audio.currentTime);
             }
-            music.shuffleArray = shuffle(temp);
-            for (var j = 0; j < music.shuffleArray.length; j++) {
-                if (music.shuffleArray[j] === music.currentTrack) {
-                    music.shuffleIndex = j;
-                    break;
+        });
+
+        $("#player .cover").on('click', function () {
+            music.isShuffle = music.isShuffle;
+            if (this.property.isShuffle) {
+                $("#player .cover").attr("title", "点击关闭随机播放");
+                showNotification('已开启随机播放');
+
+                var temp = [];
+                for (var i = 0; i < music.playlist.length; i++) {
+                    temp[i] = i;
                 }
-            }
-            localStorage.qplayer_shuffle_array = JSON.stringify(music.shuffleArray);
-        } else {
-            $("#player .cover").attr("title", "点击开启随机播放");
-            showNotification('已关闭随机播放');
-            localStorage.removeItem('qplayer_shuffle_array');
-        }
-        localStorage.qplayer = music.isShuffle;
-    });
-
-    $("#QPlayer .ssBtn").on('click', function () {
-        var mA = $("#QPlayer");
-        if ($('.ssBtn .adf').hasClass('on') === false) {
-            mA.css("transform", "translateX(250px)");
-            $('.ssBtn .adf').addClass('on');
-        } else {
-            mA.css("transform", "translateX(0px)");
-            $('.ssBtn .adf').removeClass('on')
-        }
-    });
-
-    $('#QPlayer .liebiao,#QPlayer .liebiao').on('click', function () {
-        var pl = $('#playlist');
-        if (pl.hasClass('go') === false) {
-            pl.addClass('go').css({
-                "max-height": "360px",
-                "transition": "max-height .5s ease",
-                "border-top": "1px solid #dedede"
-            });
-        } else {
-            pl.removeClass('go').css({
-                "max-height": "0px",
-                "transition": "max-height .5s ease",
-                // "border": "0"
-            });
-        }
-    });
-
-    $('.playback').on('click', function () {
-        if ($(this).hasClass('playing')) {
-            music.pause();
-        } else {
-            music.play();
-        }
-    });
-
-
-    $('.rewind').on('click', function () {
-        if (music.isShuffle) {
-            music.shufflePlay(0);
-        } else {
-            music.switchTrack(--(music.property.currentTrack));
-        }
-    });
-
-    $('.fastforward').on('click', function () {
-        if (music.isShuffle) {
-            music.shufflePlay(1);
-        } else {
-            music.switchTrack(++(music.property.currentTrack));
-        }
-    });
-
-    $('#playlist li').each(function (i) {
-        $(this).on('click', function () {
-            if (music.isShuffle) {
+                music.shuffleArray = shuffle(temp);
                 for (var j = 0; j < music.shuffleArray.length; j++) {
-                    if (music.shuffleArray[j] === i) {
+                    if (music.shuffleArray[j] === music.currentTrack) {
                         music.shuffleIndex = j;
                         break;
                     }
                 }
+                localStorage.qplayer_shuffle_array = JSON.stringify(music.shuffleArray);
             } else {
-                music.currentTrack = i;
+                $("#player .cover").attr("title", "点击开启随机播放");
+                showNotification('已关闭随机播放');
+                localStorage.removeItem('qplayer_shuffle_array');
             }
-            music.switchTrack(i);
+            localStorage.qplayer = music.isShuffle;
         });
-    });
+
+        $("#QPlayer .ssBtn").on('click', function () {
+            var mA = $("#QPlayer");
+            if ($('.ssBtn .adf').hasClass('on') === false) {
+                mA.css("transform", "translateX(250px)");
+                $('.ssBtn .adf').addClass('on');
+            } else {
+                mA.css("transform", "translateX(0px)");
+                $('.ssBtn .adf').removeClass('on')
+            }
+        });
+
+        $('#QPlayer .liebiao,#QPlayer .liebiao').on('click', function () {
+            var pl = $('#playlist');
+            if (pl.hasClass('go') === false) {
+                pl.addClass('go').css({
+                    "max-height": "360px",
+                    "transition": "max-height .5s ease",
+                    "border-top": "1px solid #dedede"
+                });
+            } else {
+                pl.removeClass('go').css({
+                    "max-height": "0px",
+                    "transition": "max-height .5s ease",
+                // "border": "0"
+            });
+            }
+        });
+
+        $('.playback').on('click', function () {
+            if ($(this).hasClass('playing')) {
+                music.pause();
+            } else {
+                music.play();
+            }
+        });
+
+
+        $('.rewind').on('click', function () {
+            if (music.isShuffle) {
+                music.shufflePlay(0);
+            } else {
+                music.switchTrack(--(music.property.currentTrack));
+            }
+        });
+
+        $('.fastforward').on('click', function () {
+            if (music.isShuffle) {
+                music.shufflePlay(1);
+            } else {
+                music.switchTrack(++(music.property.currentTrack));
+            }
+        });
+
+        $('#playlist').on('click', 'li.lib', function () {
+            console.log(1);
+            if (music.isShuffle) {
+                music.shufflePlay(1);
+            } else {
+                music.switchTrack(++(music.property.currentTrack));
+            }
+        });
+    })
+
+
+
+

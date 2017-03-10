@@ -17,9 +17,6 @@
     <link rel="stylesheet" href="/home/css/player.css">
 </head>
 <body>
-    <!-- @if (!empty($setting->bgsound))
-    <audio id="bgaudio" src="{{ $setting->bgsound }}" autoplay="autoplay" style="display: none"></audio>
-    @endif -->
     <!-- Main container -->
     <div class="container">
         <!-- Blueprint header -->
@@ -120,7 +117,6 @@
 <!-- 播放器 -->
 <script src="/home/js/jquery.marquee.min.js"></script>
 <script src="/home/js/musicNew.js"></script>
-
 <script type="text/javascript">
     $(function () {
         var playlist = [
@@ -146,6 +142,5 @@
         music.start(playlist, true);
     })
 </script>
-<!-- <script src="/home/js/player.js"></script> -->
 
 </html>
