@@ -144,7 +144,6 @@
         loadMusic: function (i) {
             var item = _this.property.playlist[i];
             while (item.mp3 == "") {
-                showNotification('歌曲地址为空，已自动跳过');
                 if (_this.property.isShuffle) {
                     if (++_this.property.shuffleIndex === _this.property.shuffleArray.length) {
                         _this.property.shuffleIndex = 0;
@@ -203,7 +202,7 @@
             endX = event.originalEvent.targetTouches[0].screenX;
             var seekRange = Math.round((endX - startX) / 678 * 100);
             audio.currentTime += seekRange;
-            setProgress(audio.currentTime);
+            _this.setProgress(audio.currentTime);
         });
 
         var startX, endX;
@@ -214,7 +213,7 @@
                 endX = event.screenX;
                 var seekRange = Math.round((endX - startX) / 678 * 100);
                 audio.currentTime += seekRange;
-                setProgress(audio.currentTime);
+                _this.setProgress(audio.currentTime);
             }
         });
 
@@ -222,7 +221,6 @@
             music.isShuffle = music.isShuffle;
             if (this.property.isShuffle) {
                 $("#player .cover").attr("title", "点击关闭随机播放");
-                showNotification('已开启随机播放');
 
                 var temp = [];
                 for (var i = 0; i < music.playlist.length; i++) {
@@ -238,7 +236,6 @@
                 localStorage.qplayer_shuffle_array = JSON.stringify(music.shuffleArray);
             } else {
                 $("#player .cover").attr("title", "点击开启随机播放");
-                showNotification('已关闭随机播放');
                 localStorage.removeItem('qplayer_shuffle_array');
             }
             localStorage.qplayer = music.isShuffle;
@@ -261,7 +258,7 @@
                 pl.addClass('go').css({
                     "max-height": "360px",
                     "transition": "max-height .5s ease",
-                    "border-top": "1px solid #dedede"
+                    // "border-top": "1px solid #dedede"
                 });
             } else {
                 pl.removeClass('go').css({
@@ -279,7 +276,6 @@
                 music.play();
             }
         });
-
 
         $('.rewind').on('click', function () {
             if (music.isShuffle) {

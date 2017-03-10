@@ -111,7 +111,6 @@
 <script src="/home/js/dynamics.min.js"></script>
 <script src="/layui/layui.js"></script>
 <script src="/home/js/dynamics.min.js"></script>
-
 <script src="/home/js/main.js"></script>
 
 <!-- 播放器 -->
