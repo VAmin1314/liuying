@@ -4,8 +4,8 @@
 小屁孩的专用管理后台
 @endsection
 
-@section('photo') active @endsection
-@section('issuePhoto') active @endsection
+@section('music') active @endsection
+@section('issueMusic') active @endsection
 
 @section('css')
 <!-- Custom styles for this template -->
@@ -22,7 +22,6 @@
 <script src="/admin/js/sparkline-chart.js"></script>
 <script src="/admin/js/easy-pie-chart.js"></script>
 <!-- 时间选择器 -->
-
 <script src="/admin/js/bootstrap-switch.js"></script>
 <script src="/admin/js/jquery.tagsinput.js"></script>
 <script type="text/javascript" src="/admin/assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
@@ -69,52 +68,34 @@
 @section('main')
 <section class="panel">
     <header class="panel-heading">
-        图片发布
+        添加歌曲
     </header>
     <div class="panel-body">
         <form class="form-horizontal tasi-form" method="post" action="">
             {{ csrf_field() }}
             <div class="form-group">
-                <label class="col-sm-2 control-label">标题</label>
+                <label class="col-sm-2 control-label">歌曲标题</label>
                 <div class="col-sm-10">
-                    <input type="text" autocomplete="off" name="title" class="form-control" placeholder="图片的大标题">
+                    <input type="text" autocomplete="off" name="title" class="form-control" placeholder="歌曲标题">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">小标题</label>
+                <label class="col-sm-2 control-label">歌曲作者</label>
                 <div class="col-sm-10">
-                    <input type="text" autocomplete="off" name="little_title" class="form-control" placeholder="图片的小标题，可以不写">
+                    <input type="text" autocomplete="off" name="artist" class="form-control" placeholder="歌曲作者">
                     <!-- <span class="help-block">介绍</span> -->
                 </div>
             </div>
-            <!-- <div class="form-group">
-                <label class="col-sm-2 control-label">拍摄时间</label>
-                <div class="col-sm-4">
-                    <input class="form-control" type="date" placeholder="图片的拍摄时间">
-                </div>
-            </div> -->
             <div class="form-group">
-                <label class="control-label col-sm-2">拍摄时间</label>
-                <div class="col-sm-4">
-                    <input id="dp1" name="shot_time" type="text" size="16" class="form-control" placeholder="图片的拍摄时间">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">拍摄地点</label>
-                <div class="col-sm-4">
-                    <input type="text" autocomplete="off" name="shot_add" class="form-control" placeholder="图片的拍摄地点">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">描述</label>
+                <label class="control-label col-sm-2">歌曲的封面图片</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" rows="5" placeholder="图片的详细描述，写的少的话，会很难看，所以你看着办吧" name="description"></textarea>
+                    <input name="path" type="text" class="form-control" placeholder="歌曲的封面图片(暂时只能链接)">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">图片</label>
-                <div class="col-sm-10 photo-area">
-                    <input type="file" name="photo" class="layui-upload-file">
+                <label class="col-sm-2 control-label">歌曲</label>
+                <div class="col-sm-10">
+                    <input type="text" autocomplete="off" name="cover" class="form-control" placeholder="歌曲链接(暂时只能链接)">
                 </div>
             </div>
             <div class="form-group">

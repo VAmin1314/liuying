@@ -6,6 +6,8 @@ Route::group(['namespace' => 'Home'], function () {
     Route::get('/', 'IndexController@index');
 });
 
+// 获取音乐列表
+Route::post('/getMusicList', 'Api\MusicController@index');
 
 /**
  * 后台的路由文件
@@ -14,9 +16,9 @@ Route::get('/backend/login', 'Admin\LoginController@index');
 Route::post('/backend/login', 'Admin\LoginController@login');
 
 $admin = [
-    'namespace' => 'Admin',
-    'prefix' => '/backend',
-    'middleware' => 'admin'
+'namespace' => 'Admin',
+'prefix' => '/backend',
+'middleware' => 'admin'
 ];
 
 Route::group($admin, function () {
@@ -39,6 +41,7 @@ Route::group($admin, function () {
     Route::post('/issueMusic', 'MusicController@saveMusic');
     Route::post('/getMusic', 'MusicController@getMusic');
     Route::post('/delMusic', 'MusicController@delMusic');
+
 
     // 设置
     Route::get('/setting', 'SettingController@index');

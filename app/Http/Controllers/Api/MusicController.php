@@ -6,30 +6,34 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use Session;
-use App\Model\Photo;
-use App\Model\Setting;
+use App\Model\Music;
 
 class MusicController extends Controller
 {
     protected $photo;
 
-    public function __construct (Photo $photo, Setting $setting)
+    public function __construct ()
     {
-        $this->photo = $photo;
-        $this->setting = $setting;
+        //
     }
 
     public function index ()
     {
-        $setting = $this->setting->where('key', 'setting')->first();
-        $setting = json_decode($setting->value);
-        $photo = [];
+        $list = [
+            [
+                'title' => '最幸福的事',
+                'artist' => '梁文音',
+                'mp3' => '/bgsound/bgsound.mp3',
+                'cover' => 'http://musicdata.baidu.com/data2/pic/26418b044183959c716ebe1c360eee85/262031072/262031072.jpg@s_0,w_300',
+            ],
+            [
+                'title' => 'Gravity2',
+                'artist' => 'Jessica',
+                'mp3' => 'http://p2.music.126.net/lkK28FliZQJwQ5r1XAZ-KA==/3285340747760477.mp3',
+                'cover' => 'http://p4.music.126.net/7VJn16zrictuj5kdfW1qHA==/3264450024433083.jpg?param=106x106',
+            ],
+        ];
 
-        // 是否允许别人访问
-        if (!empty($setting->is_allow)) {
-            $photo = $this->photo->where('admin_id', 1)->get();
-        }
-
-        return view('home.index', compact('photo', 'setting'));
+        return $list;
     }
 }

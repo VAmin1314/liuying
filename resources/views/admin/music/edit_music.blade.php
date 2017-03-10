@@ -4,7 +4,7 @@
 小屁孩的专用管理后台
 @endsection
 
-@section('photo') active @endsection
+@section('music') active @endsection
 
 @section('css')
 <!-- Custom styles for this template -->

@@ -32,7 +32,7 @@
                     <li class="@yield('musicList')">
                         <a href="/backend/musicList">音乐列表</a>
                     </li>
-                    <li class="@yield('issuePhoto')">
+                    <li class="@yield('issueMusic')">
                         <a href="/backend/issueMusic">添加音乐</a>
                     </li>
                 </ul>

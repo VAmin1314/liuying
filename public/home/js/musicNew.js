@@ -1,25 +1,36 @@
     var LPlayer = {
         property: {
-            playlist: {},
             isShowNotification: false,
             isInitMarquee: true,
             shuffleArray: [],
             shuffleIndex: '',
-            isFirstPlay: localStorage.qplayer == undefined ? true : false,
+            isFirstPlay: true,
             isShuffle: false,
             currentTrack: 0,
             autoplay: false,
+            playlist: {},
+            type: 'json',
             isRotate: true
         },
-        start: function (playlist = {}, autoplay = false) {
-            if (!playlist) {
+        init: function (data) {
+            if (!data.playlist) {
                 // alert('没有播放列表');
                 return false;
             }
 
+            _this.property.playlist = data.playlist;
+            _this.property.autoplay = data.autoPlay;
+            _this.property.type = data.type;
+            _this.property.isRotate = data.isRotate;
+
+            if (_this.property.type == 'api') {
+                _this.getList(data.playlist);
+            }
+        },
+        start: function (data = {}) {
             _this = this;
-            _this.property.playlist = playlist;
-            _this.property.autoplay = autoplay;
+
+            _this.init(data);
 
             for (var i = 0; i < _this.property.playlist.length; i++) {
                 var item = _this.property.playlist[i];
@@ -195,6 +206,18 @@
                 direction: 'left',
                 duplicated: true
             });
+        },
+        getList: function (url) {
+            // 根据API获取 json 数据
+            $.ajax({
+                url: url,
+                type: 'post',
+                dataType: 'json',
+                async: false,
+                success: function (data) {
+                    _this.property.playlist = data;
+                }
+            })
         }
     };
 
@@ -303,4 +326,9 @@
             var num = $(this).index();
             LPlayer.switchTrack(num);
         });
+
+        var lis= $('.lib');
+        for(var i=0; i<lis.length; i+=2){
+            lis[i].style.background = 'rgba(246, 246, 246, 0.5)';
+        }
     })

@@ -118,27 +118,26 @@
 <script src="/home/js/musicNew.js"></script>
 <script type="text/javascript">
     $(function () {
-        var playlist = [
-        {
-            title:"最幸福的事",
-            artist:"梁文音",
-            mp3:"@if (!empty($setting->bgsound)) {{ $setting->bgsound }} @endif",
-            cover:"http://musicdata.baidu.com/data2/pic/26418b044183959c716ebe1c360eee85/262031072/262031072.jpg@s_0,w_300",
-        },
-        {
-            title:"最幸福的事",
-            artist:"梁文音",
-            mp3:"@if (!empty($setting->bgsound)) {{ $setting->bgsound }} @endif",
-            cover:"http://musicdata.baidu.com/data2/pic/26418b044183959c716ebe1c360eee85/262031072/262031072.jpg@s_0,w_300",
-        },
-        ];
+        // var playlist = [
+        // {
+        //     title:"最幸福的事",
+        //     artist:"梁文音",
+        //     mp3:"@if (!empty($setting->bgsound)) {{ $setting->bgsound }} @endif",
+        //     cover:"http://musicdata.baidu.com/data2/pic/26418b044183959c716ebe1c360eee85/262031072/262031072.jpg@s_0,w_300",
+        // },
+        // {
+        //     title:"最幸福的事",
+        //     artist:"梁文音",
+        //     mp3:"@if (!empty($setting->bgsound)) {{ $setting->bgsound }} @endif",
+        //     cover:"http://musicdata.baidu.com/data2/pic/26418b044183959c716ebe1c360eee85/262031072/262031072.jpg@s_0,w_300",
+        // },
+        // ];
 
-        var lis= $('.lib');
-        for(var i=0; i<lis.length; i+=2){
-            lis[i].style.background = 'rgba(246, 246, 246, 0.5)';
-        }
-
-        LPlayer.start(playlist, true);
+        LPlayer.start({
+            playlist: 'http://xph.cc/getMusicList',
+            autoPlay: true,
+            type: 'api'
+        });
     })
 </script>
 

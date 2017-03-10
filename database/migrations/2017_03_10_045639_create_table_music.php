@@ -15,6 +15,12 @@ class CreateTableMusic extends Migration
     {
         Schema::create('music', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title')->comment('歌曲的标题');
+            $table->string('artist')->comment('歌曲的作者');
+            $table->string('path')->comment('歌曲的链接地址');
+            $table->string('cover')->comment('歌曲的封面图片');
+            $table->string('status')->comment('是否显示');
+
             $table->timestamps();
         });
     }
