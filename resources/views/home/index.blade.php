@@ -134,7 +134,7 @@
         // ];
 
         LPlayer.start({
-            playlist: 'http://xph.cc/getMusicList',
+            playlist: '/getMusicList',
             autoPlay: true,
             type: 'api'
         });
