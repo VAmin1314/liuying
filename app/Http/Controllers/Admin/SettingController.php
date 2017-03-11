@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use Qiniu;
 use App\Model\Setting;
 
 class SettingController extends Controller
@@ -37,7 +38,6 @@ class SettingController extends Controller
     public function saveSetting (Request $request)
     {
         $data = $request->except('_token');
-        $data['bgsound'] = $data['bgsound'] == null ?'':$data['bgsound'];
         $json = json_encode($data);
 
         $data = $this->setting->where('key', 'setting')->first();

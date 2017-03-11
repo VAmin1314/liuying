@@ -37,7 +37,7 @@
                 layer.confirm('真的要把这么美丽的图片删掉？', {
                     btn: ['就是要删', '突然不想删了']
                 }, function () {
-                    $.post('/backend/delPhoto', {id: id}, function (data) {
+                    $.post('/backend/delMusic', {id: id}, function (data) {
                         layer.msg('真尼玛残忍！', {icon: 1});
                         location.href = '';
                     })
@@ -60,9 +60,10 @@
                     <tr>
                         <th> ID</th>
                         <th> 标题</th>
-                        <th> 简介</th>
-                        <th> 添加时间</th>
-                        <th> 图片</th>
+                        <th> 作者</th>
+                        <th> 试听</th>
+                        <th> 状态</th>
+                        <th> 封面</th>
                         <th> 操作</th>
                     </tr>
                 </thead>
@@ -71,13 +72,14 @@
                     <tr>
                         <td>{{ $v->id }}</td>
                         <td>{{ $v->title }}</td>
-                        <td>{{ $v->little_title }}</td>
-                        <td>{{ $v->created_at }}</td>
+                        <td>{{ $v->artist }}</td>
+                        <td>{{ $v->path }}</td>
+                        <td>{{ $v->status }}</td>
                         <td>
-                            <img src="{{ $v->path }}" style="max-width: 200px;max-height: 100px">
+                            <img src="{{ $v->cover }}" style="max-width: 200px;max-height: 100px">
                         </td>
                         <td>
-                            <a class="btn btn-primary" href="/backend/editPhoto/{{ $v->id }}">
+                            <a class="btn btn-primary" href="/backend/editMusic/{{ $v->id }}">
                                 <i class="icon-pencil"></i>
                             </a>
                             <button class="btn btn-danger del-photo" data-id="{{ $v->id }}">

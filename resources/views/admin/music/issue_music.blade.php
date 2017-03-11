@@ -83,19 +83,29 @@
                 <label class="col-sm-2 control-label">歌曲作者</label>
                 <div class="col-sm-10">
                     <input type="text" autocomplete="off" name="artist" class="form-control" placeholder="歌曲作者">
-                    <!-- <span class="help-block">介绍</span> -->
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2">歌曲的封面图片</label>
-                <div class="col-sm-10">
-                    <input name="path" type="text" class="form-control" placeholder="歌曲的封面图片(暂时只能链接)">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">歌曲</label>
                 <div class="col-sm-10">
-                    <input type="text" autocomplete="off" name="cover" class="form-control" placeholder="歌曲链接(暂时只能链接)">
+                    <input type="text" autocomplete="off" name="path" class="form-control" placeholder="歌曲链接(暂时只能链接)">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">歌曲的封面图片</label>
+                <div class="col-sm-10">
+                <input name="cover" type="text" class="form-control" placeholder="歌曲的封面图片(暂时只能链接)">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">是否显示</label>
+                <div class="col-sm-10">
+                    <label class="radio-inline">
+                        <input type="radio" name="status" value="1" checked> 显示
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="status" value="0"> 不显示
+                    </label>
                 </div>
             </div>
             <div class="form-group">

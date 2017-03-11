@@ -74,47 +74,38 @@
         <form class="form-horizontal tasi-form" method="post" action="">
             {{ csrf_field() }}
             <div class="form-group">
-                <label class="col-sm-2 control-label">标题</label>
-                <div class="col-sm-4">
-                    <input type="text" autocomplete="off" name="title" class="form-control" value="{{ $data->title }}">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">小标题</label>
-                <div class="col-sm-4">
-                    <input type="text" autocomplete="off" name="little_title" class="form-control" value="{{ $data->little_title }}">
-                    <!-- <span class="help-block">介绍</span> -->
-                </div>
-            </div>
-            <!-- <div class="form-group">
-                <label class="col-sm-2 control-label">拍摄时间</label>
-                <div class="col-sm-4">
-                    <input class="form-control" type="date" placeholder="图片的拍摄时间">
-                </div>
-            </div> -->
-            <div class="form-group">
-                <label class="control-label col-sm-2">拍摄时间</label>
-                <div class="col-sm-3">
-                    <input id="dp1" name="shot_time" type="text" size="16" class="form-control" value="{{ $data->shot_time }}">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">拍摄地点</label>
-                <div class="col-sm-3">
-                    <input type="text" autocomplete="off" name="shot_add" class="form-control" value="{{ $data->shot_add }}">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">描述</label>
+                <label class="col-sm-2 control-label">歌曲标题</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" rows="5" placeholder="图片的详细描述，写的少的话，会很难看，所以你看着办吧" name="description">{{ $data->description }}</textarea>
+                <input type="text" autocomplete="off" name="title" class="form-control" value="{{ $data->title }}">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">图片</label>
-                <div class="col-sm-10 photo-area">
-                    <img src="{{ $data->path }}" style="max-width: 400px; max-height: 400px">
-                    <input type="file" name="photo" class="layui-upload-file">
+                <label class="col-sm-2 control-label">歌曲作者</label>
+                <div class="col-sm-10">
+                    <input type="text" autocomplete="off" name="artist" class="form-control" value="{{ $data->artist }}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">歌曲</label>
+                <div class="col-sm-10">
+                    <input type="text" autocomplete="off" name="path" class="form-control" value="{{ $data->path }}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">歌曲的封面图片</label>
+                <div class="col-sm-10">
+                    <input name="cover" type="text" class="form-control" value="{{ $data->cover }}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">是否显示</label>
+                <div class="col-sm-10">
+                    <label class="radio-inline">
+                        <input type="radio" name="status" value="1" {{ $data->status ? 'checked':'' }} > 显示
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="status" value="0" {{ $data->status ? '':'checked' }}> 不显示
+                    </label>
                 </div>
             </div>
             <div class="form-group">

@@ -82,10 +82,14 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">背景音乐</label>
-                <div class="col-sm-8">
-                    <input type="text" autocomplete="off" name="bgsound" class="form-control" placeholder="你可以选你喜欢的音乐了！(暂时只支持外部链接)" @if (!empty($data->bgsound)) value="{{ $data->bgsound }}" @endif>
-                    <!-- <input type="file" name="photo" class="layui-upload-file"> -->
+                <label class="col-sm-2 control-label">背景音乐自动播放</label>
+                <div class="col-sm-10">
+                    <label class="radio-inline">
+                        <input type="radio" name="autoplay" id="inlineRadio1" value="1" @if (!empty($data->autoplay) && $data->autoplay == 1) checked @endif> 自动
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="autoplay" id="inlineRadio2" value="0" @if (isset($data->autoplay) && $data->autoplay == 0) checked @endif> 手动
+                    </label>
                 </div>
             </div>
             <div class="form-group">

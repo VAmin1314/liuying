@@ -8,5 +8,5 @@ class Music extends Model
 {
     protected $table = 'music';
 
-    protected $fillable = [];
+    protected $fillable = ['title', 'status', 'artist', 'path', 'cover'];
 }
