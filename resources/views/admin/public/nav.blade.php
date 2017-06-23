@@ -47,6 +47,9 @@
                     <li class="@yield('commonSetting')">
                         <a href="/backend/setting">通用设置</a>
                     </li>
+                    <li class="@yield('password')">
+                        <a href="/backend/password">修改密码</a>
+                    </li>
                 </ul>
             </li>
         </ul>

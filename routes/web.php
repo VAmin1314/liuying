@@ -27,6 +27,7 @@ Route::group($admin, function () {
     // 图片
 
     Route::resource('/photo', 'PhotoController');
+    Route::resource('/password', 'PasswordController');
     // Route::get('/photoList', 'PhotoController@index');
     // Route::get('/issuePhoto', 'PhotoController@issuePhoto');
     // Route::get('/editPhoto/{id}', 'PhotoController@editPhoto');

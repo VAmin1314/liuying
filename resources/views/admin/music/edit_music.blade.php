@@ -76,7 +76,7 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">歌曲标题</label>
                 <div class="col-sm-10">
-                <input type="text" autocomplete="off" name="title" class="form-control" value="{{ $data->title }}">
+                    <input type="text" autocomplete="off" name="title" class="form-control" value="{{ $data->title }}">
                 </div>
             </div>
             <div class="form-group">
