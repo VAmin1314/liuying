@@ -40,12 +40,10 @@
                             <a href="{{ qiniu_path($v->qiniu_key) }}" class="getPhoto" data-key="{{ $v->qiniu_key }}" target="_block">[查看]</a>
                         </td>
                         <td>
-                            <a class="btn btn-primary" href="/backend/editPhoto/{{ $v->id }}">
-                                <i class="icon-pencil"></i>
-                            </a>
+                            <!-- <a class="btn btn-primary" href="/backend/editPhoto/{{ $v->id }}"> <i class="icon-pencil"></i> </a>
                             <button class="btn btn-danger del-photo" data-id="{{ $v->id }}">
                                 <i class="icon-trash"></i>
-                            </button>
+                            </button> -->
                         </td>
                     </tr>
                     @endforeach
