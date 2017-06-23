@@ -1,5 +1,4 @@
 <?php
-use Hash;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,7 +12,7 @@ class DatabaseSeeder extends Seeder
     {
         DB::table('admin')->insert([
             'name' => 'admin',
-            'password' => Hash::make('123456'),
+            'password' => '123456',
             'created_at' => '2017-01-01 00:00:00',
             'updated_at' => '2017-01-01 00:00:00'
         ]);
