@@ -22,7 +22,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="sub-menu @yield('music')">
+            <!-- <li class="sub-menu @yield('music')">
                 <a href="javascript:;" class="">
                     <i class="icon-book"></i>
                     <span>音乐列表</span>
@@ -37,7 +37,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="sub-menu @yield('setting')">
+ -->            <li class="sub-menu @yield('setting')">
                 <a href="javascript:;">
                     <i class="icon-book"></i>
                     <span>系统设置</span>
