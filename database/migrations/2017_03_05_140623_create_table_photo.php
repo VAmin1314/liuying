@@ -21,6 +21,8 @@ class CreateTablePhoto extends Migration
             $table->string('shot_time')->default('')->comment('图片的拍摄时间');
             $table->string('shot_add')->default('')->comment('图片的拍摄地点');
             $table->string('little_title')->default('')->comment('图片的小标题');
+            $table->string('qiniu_key')->default('')->comment('图片的小标题');
+            $table->string('qiniu_hash')->default('')->comment('图片的小标题');
             $table->text('description')->comment('图片的描述');
 
             $table->timestamps();
