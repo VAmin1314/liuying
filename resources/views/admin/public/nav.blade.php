@@ -18,7 +18,7 @@
                         <a href="/backend/photo">图片列表</a>
                     </li>
                     <li class="@yield('issue')">
-                        <a href="/backend/photo/create">发布图片</a>
+                        <a href="/backend/photo/create">添加图片</a>
                     </li>
                 </ul>
             </li>

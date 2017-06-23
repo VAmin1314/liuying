@@ -36,8 +36,8 @@
                         <td>{{ $v->little_title }}</td>
                         <td>{{ $v->created_at }}</td>
                         <td>
-                            <a href="javascript:;" class="getPhoto" data-key="{{ $v->qiniu_key }}">[查看]</a>
                             <img src="{{ qiniu_path($v->qiniu_key) }}" style="max-width: 200px;max-height: 100px">
+                            <a href="{{ qiniu_path($v->qiniu_key) }}" class="getPhoto" data-key="{{ $v->qiniu_key }}" target="_block">[查看]</a>
                         </td>
                         <td>
                             <a class="btn btn-primary" href="/backend/editPhoto/{{ $v->id }}">
@@ -60,8 +60,7 @@
 <script src="/admin/js/sparkline-chart.js"></script>
 <script src="/admin/js/easy-pie-chart.js"></script>
 <script>
-$('.getPhoto').click(function () {
-
-})
+    // $('.getPhoto').click(function () {
+    // })
 </script>
 @endsection
