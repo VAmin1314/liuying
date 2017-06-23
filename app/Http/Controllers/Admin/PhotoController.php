@@ -1,7 +1,6 @@
 <?php
 namespace App\Http\Controllers\Admin;
 
-use Storage;
 use Session;
 use App\Model\Photo;
 use Illuminate\Http\Request;

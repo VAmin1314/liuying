@@ -12,12 +12,8 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-<<<<<<< HEAD
         '/backend/getPhoto',
         '/backend/delPhoto',
         '/getMusicList'
-=======
-        //
->>>>>>> 3ae9386a0dd1725c8b915992eb23dd9f3fa9d2b8
     ];
 }

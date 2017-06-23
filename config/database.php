@@ -46,10 +46,7 @@ return [
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
-<<<<<<< HEAD
-=======
             'unix_socket' => env('DB_SOCKET', ''),
->>>>>>> 3ae9386a0dd1725c8b915992eb23dd9f3fa9d2b8
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
@@ -70,8 +67,6 @@ return [
             'sslmode' => 'prefer',
         ],
 
-<<<<<<< HEAD
-=======
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'host' => env('DB_HOST', 'localhost'),
@@ -82,8 +77,6 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
         ],
-
->>>>>>> 3ae9386a0dd1725c8b915992eb23dd9f3fa9d2b8
     ],
 
     /*

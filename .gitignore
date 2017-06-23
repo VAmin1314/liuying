@@ -1,5 +1,4 @@
 /node_modules
-<<<<<<< HEAD
 /public/storage
 /public/hot
 /public/upload
@@ -10,16 +9,4 @@ Homestead.json
 Homestead.yaml
 .env
 .DS_Store
-=======
-/public/hot
-/public/storage
-/storage/*.key
-/vendor
-/.idea
-/.vagrant
-Homestead.json
-Homestead.yaml
-npm-debug.log
-.env
 
->>>>>>> 3ae9386a0dd1725c8b915992eb23dd9f3fa9d2b8
