@@ -11,11 +11,6 @@ class SettingController extends Controller
 {
     protected $setting;
 
-    /**
-     * 构造方法
-     * @Author   LiuJian
-     * @DateTime 2017-03-06
-     */
     public function __construct (Setting $setting)
     {
         $this->setting = $setting;
@@ -37,13 +32,17 @@ class SettingController extends Controller
      */
     public function saveSetting (Request $request)
     {
-        $data = $request->except('_token');
+        $data = $request->except('_token', '_url');
         $json = json_encode($data);
 
         $data = $this->setting->where('key', 'setting')->first();
         $data->value = $json;
         $data->save();
 
-        return redirect()->back();
+        return back();
     }
 }
+
+
+
+

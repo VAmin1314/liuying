@@ -14,11 +14,11 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub">
-                    <li class="@yield('photoList')">
-                        <a href="/backend/photoList">图片列表</a>
+                    <li class="@yield('list')">
+                        <a href="/backend/photo">图片列表</a>
                     </li>
-                    <li class="@yield('issuePhoto')">
-                        <a href="/backend/issuePhoto">发布图片</a>
+                    <li class="@yield('issue')">
+                        <a href="/backend/photo/create">发布图片</a>
                     </li>
                 </ul>
             </li>

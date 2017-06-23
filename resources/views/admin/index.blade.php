@@ -32,4 +32,5 @@
 @endsection
 
 @section('main')
+<h1>哈哈，啥也没有</h1>
 @endsection

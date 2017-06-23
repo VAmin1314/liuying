@@ -52,5 +52,18 @@
 
 <!--common script for all pages-->
 <script src="/admin/js/common-scripts.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#owl-demo").owlCarousel({
+            navigation : true,
+            slideSpeed : 300,
+            paginationSpeed : 400,
+            singleItem : true
+        });
+
+        $('select.styled').customSelect();
+    });
+
+</script>
 @yield('js')
 </html>

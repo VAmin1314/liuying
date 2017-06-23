@@ -1,51 +1,13 @@
 @extends('admin.public.main')
 
-@section('title')
-小屁孩的专用管理后台
-@endsection
-
-@section('photo') active @endsection
-@section('photoList') active @endsection
+@section('title', '图片列表--后台管理')
+@section('photo', 'active')
+@section('list', 'active')
 
 @section('css')
 <!-- Custom styles for this template -->
 <link href="/admin/css/style.css" rel="stylesheet">
 <link href="/admin/css/style-responsive.css" rel="stylesheet" />
-@endsection
-
-@section('js')
-<!--script for this page-->
-<script src="/admin/js/sparkline-chart.js"></script>
-<script src="/admin/js/easy-pie-chart.js"></script>
-
-<script>
-    $(function(){
-        $("#owl-demo").owlCarousel({
-            navigation : true,
-            slideSpeed : 300,
-            paginationSpeed : 400,
-            singleItem : true
-        });
-
-        $('select.styled').customSelect();
-
-        // 删除上传的图片
-        $('.del-photo').click(function () {
-            var id = $(this).attr('data-id');
-            layui.use('layer', function(){
-                var layer = layui.layer;
-                layer.confirm('真的要把这么美丽的图片删掉？', {
-                    btn: ['就是要删', '突然不想删了']
-                }, function () {
-                    $.post('/backend/delPhoto', {id: id}, function (data) {
-                        layer.msg('真尼玛残忍！', {icon: 1});
-                        location.href = '';
-                    })
-                });
-            })
-        })
-    });
-</script>
 @endsection
 
 @section('main')
@@ -74,7 +36,8 @@
                         <td>{{ $v->little_title }}</td>
                         <td>{{ $v->created_at }}</td>
                         <td>
-                            <img src="{{ $v->path }}" style="max-width: 200px;max-height: 100px">
+                            <a href="javascript:;" class="getPhoto" data-key="{{ $v->qiniu_key }}">[查看]</a>
+                            <img src="{{ qiniu_path($v->qiniu_key) }}" style="max-width: 200px;max-height: 100px">
                         </td>
                         <td>
                             <a class="btn btn-primary" href="/backend/editPhoto/{{ $v->id }}">
@@ -91,4 +54,14 @@
         </section>
     </div>
 </div>
+@endsection
+
+@section('js')
+<script src="/admin/js/sparkline-chart.js"></script>
+<script src="/admin/js/easy-pie-chart.js"></script>
+<script>
+$('.getPhoto').click(function () {
+
+})
+</script>
 @endsection

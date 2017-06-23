@@ -1,11 +1,7 @@
 @extends('admin.public.main')
 
-@section('title')
-小屁孩的专用管理后台
-@endsection
-
-@section('photo') active @endsection
-@section('issuePhoto') active @endsection
+@section('title', '图片编辑--后台管理')
+@section('photo', active)
 
 @section('css')
 <!-- Custom styles for this template -->
@@ -29,15 +25,6 @@
 <script type="text/javascript" src="/admin/assets/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
 <script>
     $(function(){
-        $("#owl-demo").owlCarousel({
-            navigation : true,
-            slideSpeed : 300,
-            paginationSpeed : 400,
-            singleItem : true
-        });
-
-        $('select.styled').customSelect();
-
         $('#dp1').datepicker({
             format: 'yyyy-mm-dd'
         });
@@ -76,44 +63,39 @@
             {{ csrf_field() }}
             <div class="form-group">
                 <label class="col-sm-2 control-label">标题</label>
-                <div class="col-sm-10">
-                    <input type="text" autocomplete="off" name="title" class="form-control" placeholder="图片的大标题">
+                <div class="col-sm-4">
+                    <input type="text" autocomplete="off" name="title" class="form-control" value="{{ $data->title }}">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">小标题</label>
-                <div class="col-sm-10">
-                    <input type="text" autocomplete="off" name="little_title" class="form-control" placeholder="图片的小标题，可以不写">
+                <div class="col-sm-4">
+                    <input type="text" autocomplete="off" name="little_title" class="form-control" value="{{ $data->little_title }}">
                     <!-- <span class="help-block">介绍</span> -->
                 </div>
             </div>
-            <!-- <div class="form-group">
-                <label class="col-sm-2 control-label">拍摄时间</label>
-                <div class="col-sm-4">
-                    <input class="form-control" type="date" placeholder="图片的拍摄时间">
-                </div>
-            </div> -->
             <div class="form-group">
                 <label class="control-label col-sm-2">拍摄时间</label>
-                <div class="col-sm-4">
-                    <input id="dp1" name="shot_time" type="text" size="16" class="form-control" placeholder="图片的拍摄时间">
+                <div class="col-sm-3">
+                    <input id="dp1" name="shot_time" type="text" size="16" class="form-control" value="{{ $data->shot_time }}">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">拍摄地点</label>
-                <div class="col-sm-4">
-                    <input type="text" autocomplete="off" name="shot_add" class="form-control" placeholder="图片的拍摄地点">
+                <div class="col-sm-3">
+                    <input type="text" autocomplete="off" name="shot_add" class="form-control" value="{{ $data->shot_add }}">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">描述</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" rows="5" placeholder="图片的详细描述，写的少的话，会很难看，所以你看着办吧" name="description"></textarea>
+                    <textarea class="form-control" rows="5" placeholder="图片的详细描述，写的少的话，会很难看，所以你看着办吧" name="description">{{ $data->description }}</textarea>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">图片</label>
                 <div class="col-sm-10 photo-area">
+                    <img src="{{ $data->path }}" style="max-width: 400px; max-height: 400px">
                     <input type="file" name="photo" class="layui-upload-file">
                 </div>
             </div>

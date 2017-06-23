@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>小屁孩的登录界面</title>
+    <title>登录界面</title>
 
     <link rel="stylesheet" type="text/css" href="/admin/css/default.css">
     <link rel="stylesheet" type="text/css" href="/admin/css/styles.css">

@@ -16,22 +16,24 @@ Route::get('/backend/login', 'Admin\LoginController@index');
 Route::post('/backend/login', 'Admin\LoginController@login');
 
 $admin = [
-'namespace' => 'Admin',
-'prefix' => '/backend',
-'middleware' => 'admin'
+    'namespace' => 'Admin',
+    'prefix' => '/backend',
+    'middleware' => 'admin'
 ];
 
 Route::group($admin, function () {
     Route::get('/', 'IndexController@index');
 
     // 图片
-    Route::get('/photoList', 'PhotoController@index');
-    Route::get('/issuePhoto', 'PhotoController@issuePhoto');
-    Route::get('/editPhoto/{id}', 'PhotoController@editPhoto');
-    Route::post('/editPhoto/{id}', 'PhotoController@saveEditPhoto');
-    Route::post('/issuePhoto', 'PhotoController@savePhoto');
-    Route::post('/getPhoto', 'PhotoController@getPhoto');
-    Route::post('/delPhoto', 'PhotoController@delPhoto');
+
+    Route::resource('/photo', 'PhotoController');
+    // Route::get('/photoList', 'PhotoController@index');
+    // Route::get('/issuePhoto', 'PhotoController@issuePhoto');
+    // Route::get('/editPhoto/{id}', 'PhotoController@editPhoto');
+    // Route::post('/editPhoto/{id}', 'PhotoController@saveEditPhoto');
+    // Route::post('/issuePhoto', 'PhotoController@savePhoto');
+    // Route::post('/getPhoto', 'PhotoController@getPhoto');
+    // Route::post('/delPhoto', 'PhotoController@delPhoto');
 
     // 音乐
     Route::get('/musicList', 'MusicController@index');

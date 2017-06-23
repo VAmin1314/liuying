@@ -23,14 +23,6 @@
 <script src="/admin/js/jquery.tagsinput.js"></script>
 <script>
     $(function(){
-        $("#owl-demo").owlCarousel({
-            navigation : true,
-            slideSpeed : 300,
-            paginationSpeed : 400,
-            singleItem : true
-        });
-        $('select.styled').customSelect();
-
         // 图片上传
         layui.use('upload', function(){
             layui.upload({
