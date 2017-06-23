@@ -1,6 +1,7 @@
 <?php
 
 return [
+<<<<<<< HEAD
 
     /*
     |--------------------------------------------------------------------------
@@ -176,4 +177,20 @@ return [
 
     'http_only' => true,
 
+=======
+    'driver' => env('SESSION_DRIVER', 'file'),
+    'lifetime' => 120,
+    'expire_on_close' => false,
+    'encrypt' => false,
+    'files' => storage_path('framework/sessions'),
+    'connection' => null,
+    'table' => 'sessions',
+    'store' => null,
+    'lottery' => [2, 100],
+    'cookie' => 'laravel_session',
+    'path' => '/',
+    'domain' => env('SESSION_DOMAIN', null),
+    'secure' => env('SESSION_SECURE_COOKIE', false),
+    'http_only' => true,
+>>>>>>> 3ae9386a0dd1725c8b915992eb23dd9f3fa9d2b8
 ];

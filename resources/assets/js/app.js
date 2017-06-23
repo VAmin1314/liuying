@@ -7,6 +7,11 @@
 
 require('./bootstrap');
 
+<<<<<<< HEAD
+=======
+window.Vue = require('vue');
+
+>>>>>>> 3ae9386a0dd1725c8b915992eb23dd9f3fa9d2b8
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

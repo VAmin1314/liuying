@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /**
  * 前台的路由文件
  */
@@ -53,3 +54,10 @@ Route::group($admin, function () {
     Route::get('/logout', 'LoginController@logout');
 });
 
+=======
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('/', 'IndexController');
+>>>>>>> 3ae9386a0dd1725c8b915992eb23dd9f3fa9d2b8

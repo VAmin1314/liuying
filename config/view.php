@@ -2,6 +2,7 @@
 
 return [
 
+<<<<<<< HEAD
     /*
     |--------------------------------------------------------------------------
     | View Storage Paths
@@ -27,6 +28,12 @@ return [
     | directory. However, as usual, you are free to change this value.
     |
     */
+=======
+    'paths' => [
+        resource_path('views'),
+    ],
+
+>>>>>>> 3ae9386a0dd1725c8b915992eb23dd9f3fa9d2b8
 
     'compiled' => realpath(storage_path('framework/views')),
 

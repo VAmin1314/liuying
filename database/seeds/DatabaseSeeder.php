@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+<<<<<<< HEAD
         // DB::table('admin')->insert([
         //     'name' => '小屁孩',
         //     'password' => '123456',
@@ -27,5 +28,8 @@ class DatabaseSeeder extends Seeder
             echo $i.PHP_EOL;
         }
         echo 'end';
+=======
+        // $this->call(UsersTableSeeder::class);
+>>>>>>> 3ae9386a0dd1725c8b915992eb23dd9f3fa9d2b8
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 return [
+<<<<<<< HEAD
 
     /*
     |--------------------------------------------------------------------------
@@ -139,6 +140,21 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
+=======
+    'name' => env('APP_NAME', 'Laravel'),
+    'env' => env('APP_ENV', 'production'),
+    'debug' => env('APP_DEBUG', false),
+    'url' => env('APP_URL', 'http://localhost'),
+    'timezone' => 'PRC',
+    'locale' => 'en',
+    'fallback_locale' => 'en',
+    'key' => env('APP_KEY'),
+    'cipher' => 'AES-256-CBC',
+    'log' => env('APP_LOG', 'single'),
+    'log_level' => env('APP_LOG_LEVEL', 'debug'),
+
+    'providers' => [
+>>>>>>> 3ae9386a0dd1725c8b915992eb23dd9f3fa9d2b8
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -161,6 +177,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+<<<<<<< HEAD
 
         /*
          * Package Service Providers...
@@ -170,11 +187,15 @@ return [
         /*
          * Application Service Providers...
          */
+=======
+        Laravel\Tinker\TinkerServiceProvider::class,
+>>>>>>> 3ae9386a0dd1725c8b915992eb23dd9f3fa9d2b8
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+<<<<<<< HEAD
 
     ],
 
@@ -189,6 +210,10 @@ return [
     |
     */
 
+=======
+    ],
+
+>>>>>>> 3ae9386a0dd1725c8b915992eb23dd9f3fa9d2b8
     'aliases' => [
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
