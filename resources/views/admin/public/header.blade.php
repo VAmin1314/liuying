@@ -213,14 +213,11 @@
             <li class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                     <img alt="" src="/images/ico.png" style="max-height: 29px;max-width: 29px">
-                    <span class="username">小屁孩</span>
+                    <span class="username">admin</span>
                     <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu extended logout">
                     <div class="log-arrow-up"></div>
-                    <!-- <li><a href="#"><i class="icon-suitcase"></i>Profile</a></li>
-                    <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
-                    <li><a href="#"><i class="icon-bell-alt"></i> Notification</a></li> -->
                     <li><a href="/backend/logout"><i class="icon-key"></i> 退出登录</a></li>
                 </ul>
             </li>
